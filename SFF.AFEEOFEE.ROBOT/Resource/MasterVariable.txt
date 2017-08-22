@@ -1,9 +1,0 @@
-*** Settings ***
-Resource          Variable/GlobalVariable.txt
-Resource          Variable/ColumnExcelSheet_OrderFree_NewRegister.txt
-Resource          Variable/ColumnExcelSheetName_CreateIMEI.txt
-Resource          Variable/ColumnExcelSheetName_Terminate.txt
-Resource          Variable/ColumnExcelSheetName_ReuseNumberAndSim.txt
-Resource          Variable/ColoumnExcelSheetName_AccoutFreeNewRegister.txt
-Resource          Variable/ColumnExcelSheetName_OderFree_ChageChageType.txt
-Resource          Variable/ColoumnExcelSheetName_AddAccountCharge.txt

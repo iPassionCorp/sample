@@ -1,4 +1,0 @@
-*** Variables ***
-${CreateIMEI_IMEI}    IMEI
-${CreateIMEI_Product Name}    Product Name
-${CreateIMEI_Remark}    Remark

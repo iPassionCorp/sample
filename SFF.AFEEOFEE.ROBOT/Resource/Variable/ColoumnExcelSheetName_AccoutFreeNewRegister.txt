@@ -1,8 +1,0 @@
-*** Variables ***
-${ExcelSheetName_NewRegister}    NewRegister
-${AccoutFreeNewRegister_IDCard}    ID Card
-${ExcelSheetName_NewRegister_MobileNo}    Mobile No
-${AccoutFreeNewRegister_SIM}    SIM
-${AccoutFreeNewRegister_CustomizePromotion}    Customize Promotion
-${ExcelSheetName_NewRegister_Remark}    Remark
-${AccoutFreeNewRegister_OrderNo}    Order No

@@ -1,8 +1,0 @@
-*** Variables ***
-${ExcelSheetName_AddAccountCharge}    AddAccountCharge
-${AddAccountCharge_MobileNo}    Mobile No
-${AddAccountCharge_AccountFeePromotion}    Account Fee Name
-${AddAccountCharge_IMEI}    IMEI
-${AddAccountCharge_InstallmentFlag}    Installment Flag
-${AddAccountCharge_OrderNo}    Order No
-${AddAccountCharge_Remark}    Remark

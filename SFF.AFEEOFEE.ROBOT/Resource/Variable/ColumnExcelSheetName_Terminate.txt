@@ -1,4 +1,0 @@
-*** Variables ***
-${ExcelSheetName_Terminate}    TeminateNumber
-${Terminate_Number}    Number
-${Terminate_Status}    Status
