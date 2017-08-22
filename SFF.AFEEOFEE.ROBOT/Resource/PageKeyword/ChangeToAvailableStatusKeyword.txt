@@ -1,0 +1,73 @@
+*** Settings ***
+Library           Selenium2Library    15
+Resource          PublicKeyword.txt
+Resource          ExcelKeyword.txt
+Resource          ../MasterVariable.txt
+
+*** Keyword ***
+ChangeNumberToAvailiableStatus
+    [Documentation]    ReUse
+    ...
+    ...    Cancelled > Available
+    Wait Until Element Is Visible    xpath=//a[@rel='ddsubmenu5']
+    Mouse Over    xpath=//a[@rel='ddsubmenu5']
+    Wait Until Element Is Visible    xpath=//a[text()='Number']
+    Mouse Over    xpath=//a[text()='Number']
+    Wait Until Element Is Visible    xpath=//a[text()='Profile Management']
+    Mouse Over    xpath=//a[text()='Profile Management']
+    Wait Until Element Is Visible    xpath=//a[text()='Number']/..//a[text()='Administration View']
+    Click Element    xpath=//a[text()='Number']/..//a[text()='Administration View']
+    @{List}=    ReadExcel    ${ExcelSheetName_ReuseNumberAndSim}    ${ReuseNumberAndSim_Number}
+    ${ListIndex}    Get Length    ${List}
+    : FOR    ${i}    IN RANGE    0    ${ListIndex}
+    \    Wait Until Element Is Visible    xpath=//input[contains(@id,'mobileNoSearch')]
+    \    Input Text    xpath=//input[contains(@id,'mobileNoSearch')]    ${List[${i}]}
+    \    Click Element    xpath=//table[@class='contentform']//input[contains(@id,'BtnGo')]
+    \    WaitBeingProcess
+    \    Wait Until Element Is Visible    xpath=//table[contains(@id,'numbersDataTable')]
+    \    ${status}    Run Keyword And Return Status    Element Should Be Visible    xpath=//table[contains(@id,'numbersDataTable')]//td[text()='Cancelled']
+    \    Run Keyword If    ${status} == False    Continue For Loop
+    \    Click Element    xpath=//img[contains(@src,'edit.png')]
+    \    Wait Until Element Is Visible    xpath=//div[@id='formNumberList:j_id_id675'][contains(.,'Number Info')]
+    \    Wait Until Element Is Visible    xpath=//select[contains(@id,'sffNumberStatusCd')]
+    \    Select From List By Value    xpath=//select[contains(@id,'sffNumberStatusCd')]    Available
+    \    Click Element    xpath=//div[contains(.,'Number Info')]//input[contains(@id,'BtnSave')]
+    \    WaitBeingProcess
+    \    Wait Until Element Is Visible    xpath=//table[contains(@id,'numbersDataTable')]//td[text()='Available']
+    \    Element Should Not Be Visible    xpath=//table[contains(@id,'numbersDataTable')]//td[text()='Cancelled']
+
+ChangeSIMToAvailiableStatus
+    [Documentation]    ReUse
+    Wait Until Element Is Visible    xpath=//a[@rel='ddsubmenu5']
+    Mouse Over    xpath=//a[@rel='ddsubmenu5']
+    Wait Until Element Is Visible    xpath=//a[text()='SIM']
+    Mouse Over    xpath=//a[text()='SIM']
+    Wait Until Element Is Visible    xpath=//a[text()='SIM Profile Management']
+    Mouse Over    xpath=//a[text()='SIM Profile Management']
+    Wait Until Element Is Visible    xpath=//a[text()='SIM']/..//a[text()='Administration View']
+    Click Element    xpath=//a[text()='SIM']/..//a[text()='Administration View']
+    Wait Until Element Is Visible    xpath=//form[@id='formQuerySim']
+    @{List}=    ReadExcel    ${ExcelSheetName_ReuseNumberAndSim}    ${ReuseNumberAndSim_Sim}
+    ${ListIndex}    Get Length    ${List}
+    ${LastIndex}    Evaluate    ${ListIndex}-${1}
+    Sort List    ${List}
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'txtSerialFrom')]
+    Input Text    xpath=//input[contains(@id,'txtSerialFrom')]    ${List[${0}]}
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'txtSerialTo')]
+    Input Text    xpath=//input[contains(@id,'txtSerialTo')]    ${List[${LastIndex}]}
+    Click Element    xpath=//input[contains(@id,'buttonSearchTabRange')]
+    WaitBeingProcess
+    : FOR    ${i}    IN RANGE    0    ${ListIndex}
+    \    Comment    ${nextpage}    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//a[text()='next']
+    \    Comment    Run Keyword If    ${nextpage}==True    Wait Until Element Is Visible
+    \    ${StatusSIM}    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//table[@id='formListSim:sffSimListDataTable']/tbody/tr[td[2]/a[text()='${List[${i}]}'] and td[6]/div[text()='Cancelled']]
+    \    Run Keyword If    ${StatusSIM} == True    Run Keywords    Click Element    xpath=//table[@id='formListSim:sffSimListDataTable']/tbody/tr[td[2]/a[text()='${List[${i}]}'] and td[contains(@id,'edit')]]//img
+    \    ...    AND    Wait Until Element Is Visible    xpath=//div[@id='formEditMaintainSim:j_id_id264']
+    \    ...    AND    Wait Until Element Is Visible    xpath=//input[contains(@id,'editSimSerialNo')][@value='${List[${i}]}']
+    \    ...    AND    Select From List By Value    xpath=//select[@id='formEditMaintainSim:statusCd']    Available
+    \    ...    AND    WaitBeingProcess
+    \    ...    AND    Scroll Element Into View    xpath=//input[contains(@id,'btnSaveEditMaintainSim')]
+    \    ...    AND    Click Element    xpath=//input[contains(@id,'btnSaveEditMaintainSim')]
+    \    ...    AND    WaitBeingProcess
+    \    ...    AND    Wait Until Element Is Visible    xpath=//li[contains(.,'Data Edited Successfully')]
+    \    Run Keyword If    ${StatusSIM} == False    Continue For Loop

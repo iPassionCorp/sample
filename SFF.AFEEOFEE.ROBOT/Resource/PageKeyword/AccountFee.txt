@@ -1,0 +1,135 @@
+*** Settings ***
+Library           Selenium2Library    15
+Resource          PublicKeyword.txt
+Resource          ExcelKeyword.txt
+Resource          ../MasterVariable.txt
+
+*** Keywords ***
+GoToAssetInformation
+    Mouse Over    xpath=//a[@rel='ddsubmenu3']
+    Mouse Over    xpath=//ul[@id='ddsubmenu3']/li/a[text()='Asset Information']
+    WaitAndClickElement    xpath=//ul[@id='ddsubmenu3']//ul/li/a[text()='Asset Information']
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'txtmobile')]
+
+AccountFee
+    @{ListMobileNo}    ReadExcel    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_MobileNo}
+    @{ListAccountFeePromotion}    ReadExcel    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_AccountFeePromotion}
+    @{ListIMEI}    ReadExcel    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_IMEI}
+    @{ListInstallmentFlag}    ReadExcel    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_InstallmentFlag}
+    ${ListIndex}    Get Length    ${ListMobileNo}
+    : FOR    ${i}    IN RANGE    ${ListIndex}
+    \    GoToAssetInformation
+    \    #Asset Search
+    \    WaitAndInputText    xpath=//input[contains(@id,'txtmobile')]    ${ListMobileNo[${i}]}
+    \    WaitAndClickElement    xpath=//select[contains(@id,'assStatusSearch')]
+    \    WaitAndClickElement    xpath=//select[contains(@id,'assStatusSearch')]/option[@value='Active']
+    \    WaitAndClickElement    xpath=//div[@id='assetFormId:j_id_id8_body']//input[contains(@id,'btnSearchAsset')]
+    \    WaitBeingProcess
+    \    #Ordere Type and Asset List
+    \    WaitAndClickElement    xpath=//select[contains(@id,'assInfoOrderTypeSelect')]
+    \    WaitAndClickElement    xpath=//select[contains(@id,'assInfoOrderTypeSelect')]//option[text()='Add Account Charge']
+    \    WaitBeingProcess
+    \    Wait Until Keyword Succeeds    5x    5s    SelectOrderTypeAndClickGoButton
+    \    #Order Header
+    \    WaitAndClickElement    xpath=//input[@value='Edit Account Fee']
+    \    #Customize Service
+    \    WaitAndInputText    xpath=//div[contains(@id,'j_id_id5_body')]//input[contains(@id,'cusAFAccountFeeName')]    ${ListAccountFeePromotion[${i}]}
+    \    WaitAndClickElement    xpath=//div[contains(@id,'j_id_id5_body')]//input[contains(@id,'SearchButton')]
+    \    ${ProcessStatus}=    CheckAlertMsgModified    xpath=//div[contains(@id,'j_id_id3')]//div[contains(@id,'j_id_id3_body')]/ul/li[@style='color: red'][1]    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_Remark}    ${AddAccountCharge_MobileNo}
+    \    ...    ${ListMobileNo[${i}]}
+    \    Run Keyword If    ${ProcessStatus}==False    Continue For Loop
+    \    Comment    WaitBeingProcess
+    \    #Available Account Fee
+    \    WaitAndClickElement    xpath=//td[contains(@id,'selectBox')]/input[contains(@id,'selectedPro')]
+    \    WaitAndClickElement    xpath=//input[contains(@id,'AddButton')]
+    \    Comment    WaitBeingProcess
+    \    #Current Account Fee
+    \    WaitAndClickElement    xpath=//div[@id='j_id_id49_body']//a[contains(@id,'linkAttrCuz')]
+    \    #Customize Account Fee
+    \    Wait Until Keyword Succeeds    3x    3s    CustomizeAccountFee_OrderReason
+    \    Wait Until Keyword Succeeds    3x    3s    CustomizeAccountFee_EffectiveCode
+    \    Wait Until Keyword Succeeds    3x    3s    CustomizeAccountFee_IMEI    ${ListIMEI[${i}]}
+    \    Wait Until Keyword Succeeds    3x    3s    CustomizeAccountFee_MobileNo    ${ListMobileNo[${i}]}
+    \    #------------------------------
+    \    Sleep    3s
+    \    WaitAndClickElement    xpath=//form[@id='j_id_id76']/input[@value='OK']
+    \    ${ProcessStatus}=    CheckAlertMsgModified    xpath=//div[contains(@id,'j_id_id3')]//div[contains(@id,'j_id_id3_body')]/ul/li[@style='color: red'][1]    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_Remark}    ${AddAccountCharge_MobileNo}
+    \    ...    ${ListMobileNo[${i}]}
+    \    Run Keyword If    ${ProcessStatus}==False    Continue For Loop
+    \    #Click OK Button
+    \    WaitAndClickElement    xpath=//input[@id='j_id_id137:OkButton']
+    \    WaitBeingProcess
+    \    #Back To Order Header
+    \    WaitAndClickElement    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'SubmitOrderButton')]
+    \    Comment    WaitBeingProcess
+    \    #Get Alert Messege
+    \    ${AlertMsgShow}=    WaitAndReturnStatus    xpath=//form[@id='formHeaderOrder']//ul[@class='contentlabelform']/li[@style='color: red']
+    \    ${GetAlertMsg}=    Run Keyword And Return If    ${AlertMsgShow}==True    WaitAndGetText    xpath=//form[@id='formHeaderOrder']//ul[@class='contentlabelform']
+    \    #Check Write Log To Excel
+    \    Run Keyword If    ${AlertMsgShow}==True    InsertDataToExcel    ${GetAlertMsg}    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_Remark}
+    \    ...    ${AddAccountCharge_MobileNo}    ${ListMobileNo[${i}]}
+    \    ...    ELSE    CreateAccountChargeSuccess    ${ListMobileNo[${i}]}
+    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+
+SelectOrderTypeAndClickGoButton
+    WaitAndClickElement    xpath=//a[@id='assetFormId:j_id_id62']
+    WaitBeingProcess
+    Wait Until Element Is Visible    xpath=//input[@value='Edit Account Fee']
+
+CustomizeAccountFee
+    [Arguments]    ${MobileNo}    ${IMEI}
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'cmbreson')]
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'cmbreson')]/option[text()='964-ค่าธรรมเนียมการให้บริการ']
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//input[contains(@id,'mobileNo')]
+    WaitAndInputText    xpath=//form[@id='j_id_id54']//input[contains(@id,'mobileNo')]    ${MobileNo}
+    Sleep    3s
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//input[contains(@id,'imei')]
+    WaitAndInputText    xpath=//form[@id='j_id_id54']//input[contains(@id,'imei')]    ${IMEI}
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'editAttrAPEffectiveCode')]
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'editAttrAPEffectiveCode')]/option[@value='Immediate']
+    #Check Data
+    Comment    ${mobileNo}=    WaitAndGetText    xpath=//form[@id='j_id_id54']//input[contains(@id,'mobileNo')]
+    Comment    ${IMEI}=    WaitAndGetText    xpath=//form[@id='j_id_id54']//input[contains(@id,'imei')]
+    Comment    ${EffectiveCode}=    WaitAndGetText    xpath=//form[@id='j_id_id54']//select[contains(@id,'editAttrAPEffectiveCode')]/option[@selected]
+    Comment    ${OrderReason}=    WaitAndGetText    //form[@id='j_id_id54']//select[contains(@id,'cmbreson')]/option[@selected]
+    Comment    Should Not Be Equal    ${None}    ${mobileNo}
+    Comment    Should Not Be Equal    ${None}    ${IMEI}
+    Comment    Should Not Be Equal    Immediate    ${EffectiveCode}
+    Comment    Should Be Equal    ${None}    ${OrderReason}
+
+CustomizeAccountFee_OrderReason
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'cmbreson')]
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'cmbreson')]/option[text()='964-ค่าธรรมเนียมการให้บริการ']
+    ${OrderReason}=    WaitAndGetText    //form[@id='j_id_id54']//select[contains(@id,'cmbreson')]/option[@selected]
+    Should Not Be Equal    ${None}    ${OrderReason}
+
+CustomizeAccountFee_MobileNo
+    [Arguments]    ${ListMobileNo}
+    Sleep    3s
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//input[contains(@id,'mobileNo')]
+    WaitAndInputText    xpath=//form[@id='j_id_id54']//input[contains(@id,'mobileNo')]    ${ListMobileNo}
+    ${mobileNo}=    WaitAndGetText    xpath=//form[@id='j_id_id54']//input[contains(@id,'mobileNo')]
+    Should Not Be Equal    ${None}    ${mobileNo}
+
+CustomizeAccountFee_IMEI
+    [Arguments]    ${ListIMEI}
+    Sleep    3s
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//input[contains(@id,'imei')]
+    WaitAndInputText    xpath=//form[@id='j_id_id54']//input[contains(@id,'imei')]    ${ListIMEI}
+    ${IMEI}=    WaitAndGetText    xpath=//form[@id='j_id_id54']//input[contains(@id,'imei')]
+    Should Not Be Equal    ${None}    ${IMEI}
+
+CustomizeAccountFee_EffectiveCode
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'editAttrAPEffectiveCode')]
+    WaitAndClickElement    xpath=//form[@id='j_id_id54']//select[contains(@id,'editAttrAPEffectiveCode')]/option[@value='Immediate']
+    ${EffectiveCode}=    WaitAndGetText    xpath=//form[@id='j_id_id54']//select[contains(@id,'editAttrAPEffectiveCode')]/option[@selected]
+    Should Be Equal    Immediate    ${EffectiveCode}
+
+CreateAccountChargeSuccess
+    [Arguments]    ${ListMobileNo}
+    #Check And Save: Order Number
+    ${GetOrderNo}=    WaitAndGetElementAttribute    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderNo')]    @value
+    InsertDataToExcel    ${GetOrderNo}    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_OrderNo}    ${AddAccountCharge_MobileNo}    ${ListMobileNo}
+    #Check And Save: Order Status
+    ${GetOrderStatus}=    WaitAndGetElementAttribute    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]    @value
+    InsertDataToExcel    ${GetOrderStatus}    ${ExcelSheetName_AddAccountCharge}    ${AddAccountCharge_Remark}    ${AddAccountCharge_MobileNo}    ${ListMobileNo}

@@ -1,0 +1,16 @@
+*** Variables ***
+${UsernameRobot}    panuwt49
+${Password}       a
+${PathFile}       C:\\__AutomateTest\\
+${ExcelFile}      Templete_Automate.xlsx
+${FolderOrderFree}    ORDERFREE\\
+${ExcelSheetNameOrderFree_NewRegister}    OrderFee_NewRegister
+${ExcelColumnRemark}    Remark
+${ExcelSheetName_CreateEMIE}    CreateIMIEExcel
+${ExcelSheetTerminate}    TeminateNumber
+${UserSahars}     sahars49
+${ResultExcel}    __Result.xlsx
+${CaptureOrderFreeResult}    CaptureOrderFreeResult.xlsx
+${TimeOut}        5s
+
+*** Keywords ***

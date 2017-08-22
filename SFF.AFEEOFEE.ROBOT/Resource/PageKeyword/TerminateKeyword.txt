@@ -1,0 +1,79 @@
+*** Settings ***
+Library           Selenium2Library    15
+Resource          PublicKeyword.txt
+Resource          ExcelKeyword.txt
+Resource          ../MasterVariable.txt
+
+*** Keyword ***
+GoToTerminate
+    Scroll Element Into View    xpath=//a[@rel='ddsubmenu3']
+    Wait Until Element Is Visible    xpath=//a[@rel='ddsubmenu3']
+    Mouse Over    xpath=//a[@rel='ddsubmenu3']
+    Wait Until Element Is Visible    xpath=(//a[text()='Asset Information'])[position()=1]
+    Mouse Over    xpath=(//a[text()='Asset Information'])[position()=1]
+    Wait Until Element Is Visible    xpath=(//a[text()='Asset Information'])[position()=2]
+    Click Element    xpath=(//a[text()='Asset Information'])[position()=2]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'txtmobile')]
+
+Disconnect-Terminate
+    @{ListNumber}=    ReadExcel    ${ExcelSheetTerminate}    ${Terminate_Number}
+    ${LastIndex}    Get Length    ${ListNumber}
+    : FOR    ${i}    IN RANGE    0    ${LastIndex}
+    \    GoToTerminate
+    \    Comment    Input Text    xpath=//input[contains(@id,'txtmobile')]    ${ListNumber[${i}]}
+    \    Execute Javascript    window.jQuery('input[id$="txtmobile"]').val('${ListNumber[${i}]}')
+    \    Wait Until Element Is Visible    xpath=//select[contains(@id,'assStatusSearch')]//option[text()='Active']
+    \    Click Element    xpath=//select[contains(@id,'assStatusSearch')]//option[text()='Active']
+    \    Wait Until Element Is Visible    xpath=//input[contains(@id,'btnSearchAsset')]
+    \    Click Element    xpath=//input[contains(@id,'btnSearchAsset')]
+    \    WaitBeingProcess
+    \    ${checkERRMSG}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//label[contains(@id,'errMessages')]
+    \    Comment    Run Keyword If    ${checkERRMSG}==True    Run Keywords    Message-Terminate    ${ListNumber[${i}]}
+    \    ...    xpath=//label[contains(@id,'errMessages')]
+    \    ...    AND    Continue For Loop
+    \    Run Keyword If    ${checkERRMSG}==True    Run Keywords    CheckAlertMsg    xpath=//label[contains(@id,'errMessages')]    ${ExcelSheetTerminate}
+    \    ...    ${Terminate_Status}    ${Terminate_Number}    ${ListNumber[${i}]}
+    \    ...    AND    Continue For Loop
+    \    ${returnStatus}=    Run Keyword If    ${checkERRMSG}==False    Process-Terminate    ${ListNumber[${i}]}
+    \    Run Keyword If    ${returnStatus}==False    Continue For Loop
+
+Process-Terminate
+    [Arguments]    ${ListNumber}
+    Wait Until Element Is Visible    xpath=//select[contains(@id,'assInfoOrderTypeSelect')]
+    Click Element    xpath=//select[contains(@id,'assInfoOrderTypeSelect')]//option[text()="Disconnect - Terminate"]
+    WaitBeingProcess
+    Wait Until Element Is Visible    xpath=//img[contains(@src,'sff_Go.png')]
+    Click Element    xpath=//img[contains(@src,'sff_Go.png')]
+    WaitBeingProcess
+    ${checkERRMSG}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//div[contains(@id,'simpleTogglePanelOrderType_body')]//li[contains(.,'Pending')]
+    Comment    ${returnStatus}=    Run Keyword If    "${checkERRMSG}"=="True"    Run Keywords    Message-Terminate    ${ListNumber}
+    ...    xpath=//div[contains(@id,'simpleTogglePanelOrderType_body')]//li[contains(.,'Pending')]
+    ...    AND    Return From Keyword    False
+    ${returnStatus}=    Run Keyword If    "${checkERRMSG}"=="True"    CheckAlertMsg    xpath=//div[contains(@id,'simpleTogglePanelOrderType_body')]//li[contains(.,'Pending')]    ${ExcelSheetTerminate}    ${Terminate_Status}
+    ...    ${Terminate_Number}    ${ListNumber}
+    ${returnStatus}=    Run Keyword If    "${checkERRMSG}"=="False"    Run Keywords    Wait Until Element Is Visible    xpath=//select[contains(@id,'ddlOrderReason')]
+    ...    AND    Click Element    xpath=//select[contains(@id,'ddlOrderReason')]//option[text()="006-ไม่มีเงินจ่าย"]
+    ...    AND    WaitBeingProcess
+    ...    AND    Scroll Element Into View    xpath=//input[contains(@id,'j_id_id612')]
+    ...    AND    Wait Until Element Is Visible    xpath=//input[contains(@id,'j_id_id612')]
+    ...    AND    Click Element    xpath=//input[contains(@id,'j_id_id612')]
+    ...    AND    Click Element    xpath=//input[contains(@id,'mpSuspendFrm:ConfirmSubmitOrderButton')]
+    ...    AND    WaitBeingProcess
+    ...    AND    Wait Until Element Is Visible    xpath=//ul[@id='messagesIDOIfrm:messagesID']//li[contains(.,'Submit ')]
+    ...    AND    Wait Until Keyword Succeeds    3x    10s    CheckComplete-Terminate
+    ...    AND    CompleteMessage-Terminate    ${ListNumber}    xpath=//input[contains(@id,'hoOrderStatus')]
+    [Return]    ${returnStatus}
+
+CheckComplete-Terminate
+    Scroll Element Into View    xpath=//input[contains(@id,'frmButtonSubmit:RefreshButton')]
+    Click Element    xpath=//input[contains(@id,'frmButtonSubmit:RefreshButton')]
+    ${lastStatus}    Get Value    xpath=//input[contains(@id,'hoOrderStatus')]
+    Should Be Equal    ${lastStatus}    Completed
+
+CompleteMessage-Terminate
+    [Arguments]    ${ListNumber}    ${LocatorErrMsg}
+    ${Column}=    Whatscolumn_DataNewRegister    ${ExcelSheetTerminate}    ${Terminate_Status}
+    ${Row}=    WhatsRow_DataNewRegister    ${ExcelSheetTerminate}    ${Terminate_Number}    ${ListNumber}
+    ${MessageStatus}=    Get Value    ${LocatorErrMsg}
+    Put String To Cell    ${ExcelSheetTerminate}    ${Column}${Row}    ${MessageStatus}
+    Save Excel    ${PathFile}${ResultExcel}

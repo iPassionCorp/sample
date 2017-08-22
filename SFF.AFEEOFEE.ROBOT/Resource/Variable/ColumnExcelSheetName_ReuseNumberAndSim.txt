@@ -1,0 +1,4 @@
+*** Variables ***
+${ExcelSheetName_ReuseNumberAndSim}    ReuseNumberAndSim
+${ReuseNumberAndSim_Number}    Number
+${ReuseNumberAndSim_Sim}    Sim

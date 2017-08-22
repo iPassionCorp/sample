@@ -1,0 +1,234 @@
+*** Settings ***
+Library           Collections
+Resource          ExcelKeyword.txt
+Library           Selenium2Library    15
+Resource          PublicKeyword.txt
+Library           AutoItLibrary
+Library           OperatingSystem
+Resource          ../MasterVariable.txt
+
+*** Keywords ***
+OrderFee
+    [Arguments]    @{List}
+    @{MobileNo}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Mobile}
+    ${ListIndex}    Get Length    ${List}
+    : FOR    ${i}    IN RANGE    0    ${ListIndex}
+    \    Create Directory    ${PathFile}${MobileNo[${i}]}
+    \    ${status}=    OrderFeeStep1    ${List[${i}]}    ${i}    ${MobileNo[${i}]}    #id
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFeeStep2    ${i}    ${MobileNo[${i}]}    #Mobile,Sim,Emie
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFeeStep3    ${i}    ${MobileNo[${i}]}    #Promotion
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFeeStep4    ${MobileNo[${i}]}
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFeeStep5    ${MobileNo[${i}]}
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+    OpenExcelByFile    ${ResultExcel}    #ไฟล์ใหม่มีข้อมูล order no
+    @{package}    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Package}
+    @{orderNo}    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_ORDER No}
+    : FOR    ${i}    IN RANGE    0    ${ListIndex}
+    \    CreateResultFileForOrderFree    ${MobileNo[${i}]}    ${package[${i}]}    ${orderNo[${i}]}
+
+NewRegisterForPayAdvance
+    [Arguments]    ${Idfromexcel}    ${i}    ${MobileNo}
+    @{Title}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Title}
+    @{FirstName}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_FirstName}
+    @{LastName}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_LastName}
+    @{Birthday}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Birtthday}
+    @{Home}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Home}
+    @{Zipcode}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Zipcode}
+    @{Tel}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Tel}
+    ${statusExcel}=    Run Keyword If    "${Title[${i}]}"=="None" and "${FirstName[${i}]}"=="None" and "${LastName[${i}]}"=="None" and "${Birthday[${i}]}"=="None" and "${Home[${i}]}"=="None" and "${Zipcode[${i}]}"=="None" and "${Tel[${i}]}"=="None"    Return From Keyword    False
+    ...    ELSE    Set Variable    True
+    Run Keyword If    ${statusExcel}==True    Run Keywords    Select From List By Value    xpath=//select[contains(@id,'accntTitle')]    ${Title[${i}]}
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@id,'caFristName')]    ${FirstName[${i}]}
+    ...    AND    Click Element    xpath=//input[contains(@id,'caLastName')]
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@id,'caLastName')]    ${LastName[${i}]}
+    ...    AND    Click Element    xpath=//input[contains(@id,'birthDt')]
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@id,'birthDt')]    ${Birthday[${i}]}
+    ...    AND    Input Text    xpath=//input[contains(@name,'j_id_id120')]    ${Home[${i}]}
+    ...    AND    Input Text    xpath=//input[@id='frmNewRegist:postalCodeCA']    ${Zipcode[${i}]}
+    ...    AND    Click Element    xpath=//a[contains(@id,'BtnZipcodeUp')]
+    ...    AND    Wait Until Element Is Visible    xpath=//div[@id='lookupZipCodeForm:j_id_id28pc5_body']
+    ...    AND    Wait Until Element Is Visible    xpath=(//input[contains(@id,'boolSelected')])[position()=1]
+    ...    AND    Click Element    xpath=(//input[contains(@id,'boolSelected')])[position()=1]
+    ...    AND    Click Element    xpath=//input[@value='OK ']
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@name,'j_id_id207')]    ${Tel[${i}]}
+    ${status}=    CheckClickNextStep    xpath=//span[text()='ข้อมูลหมายเลขจดทะเบียน']    ${ExcelSheetNameOrderFree_NewRegister}    ${MobileNo}    NewRegister_OrderFreeStep-1
+    [Return]    ${status}
+
+OrderFeeStep1
+    [Arguments]    ${IdCard}    ${i}    ${MobileNo}
+    Mouse Over    xpath=//a[@rel='ddsubmenu10']
+    Wait Until Element Is Visible    xpath=//a[text()='New Registration Payment Advanced']    30s
+    Click Element    xpath=//a[text()='New Registration Payment Advanced']
+    Wait Until Page Contains Element    xpath=//td[text()='ข้อมูลลงทะเบียน']    30s
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'idcardno')]    #id
+    Input Text    xpath=//input[contains(@id,'idcardno')]    ${IdCard}
+    ${StatusLoadData}=    Run Keyword And Return Status    CheckClickSearchIDCard
+    ${status}=    Run Keyword If    ${StatusLoadData} == True    Run Keyword And Return    VerifyDataCardID    ${IdCard}    ${i}
+    ...    ${MobileNo}
+    ...    ELSE    Run Keyword And Return    NewRegisterForPayAdvance    ${IdCard}    ${i}    ${MobileNo}
+    [Return]    ${status}    # AeTest
+
+OrderFeeStep2
+    [Arguments]    ${i}    ${MobileNo}
+    @{Mobile}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Mobile}
+    @{SimNo}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_SimNo}
+    @{IMEI}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_IMEI}
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'inputMobileNo')]    15s
+    Input Text    xpath=//input[contains(@id,'inputMobileNo')]    ${Mobile[${i}]}
+    Press Key    xpath=//input[contains(@id,'inputMobileNo')]    \\13
+    Click Element    xpath=//img[contains(@src,'regis.png')]
+    WaitBeingProcess
+    ${StatusErrorStep2-1}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${status}=    Run Keyword If    ${StatusErrorStep2-1}==True    Run Keyword And Return    CheckAlertMsg    xpath=//dt[@class='default-message-err']    ${ExcelSheetNameOrderFree_NewRegister}
+    ...    ${ExcelColumnRemark}    ${OrderFree_NewRegister_Mobile}    ${Mobile[${i}]}
+    Input Text    xpath=//input[contains(@id,'inputSIM')]    ${SimNo[${i}]}
+    Press Key    xpath=//input[contains(@id,'inputSIM')]    \\13
+    Click Element    xpath=//img[contains(@src,'regis.png')]
+    WaitBeingProcess
+    ${StatusErrorStep2-2}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${status}=    Run Keyword If    ${StatusErrorStep2-2}==True    Run Keyword And Return    CheckAlertMsg    xpath=//dt[@class='default-message-err']    ${ExcelSheetNameOrderFree_NewRegister}
+    ...    ${ExcelColumnRemark}    ${OrderFree_NewRegister_Mobile}    ${Mobile[${i}]}
+    Input Text    xpath=//input[contains(@id,'inputImei')]    ${IMEI[${i}]}
+    Press Key    xpath=//input[contains(@id,'inputSIM')]    \\13
+    Click Element    xpath=//img[contains(@src,'regis.png')]
+    WaitBeingProcess
+    ${StatusErrorStep2-3}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${status}=    Run Keyword If    ${StatusErrorStep2-3}==True    Run Keyword And Return    CheckAlertMsg    xpath=//dt[@class='default-message-err']    ${ExcelSheetNameOrderFree_NewRegister}
+    ...    ${ExcelColumnRemark}    ${OrderFree_NewRegister_Mobile}    ${Mobile[${i}]}
+    ${status}=    CheckClickNextStep    xpath=//td[text()='แพ็กเกจ']    ${ExcelSheetNameOrderFree_NewRegister}    ${MobileNo}    OrderFreeStep-2
+    [Return]    ${status}
+
+OrderFeeStep3
+    [Arguments]    ${i}    ${MobileNo}
+    ${StatusError}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${ErrorMessage}=    Run Keyword If    ${StatusError} == True    Get Text    xpath=(//dt[@class='default-message-err'])[position()=1]
+    ${status}=    Run Keyword If    ${StatusError} == True    Return From Keyword    False
+    Run Keyword If    ${StatusError} == False    SelectPackage    ${i}    ${MobileNo}
+    [Return]    ${status}
+
+OrderFeeStep4
+    [Arguments]    ${MobileNo}
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'dealerCode')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'dealLocationCd')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'dealerASCCode')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'employeeId')]
+    Input Text    xpath=//input[contains(@id,'dealerCode')]    10010    #fix
+    Wait Until Element Is Visible    xpath=//img[contains(@src,'sff_open_popup_icon.png')]    30s
+    Click Element    xpath=//img[contains(@src,'sff_open_popup_icon.png')]
+    WaitBeingProcess
+    Wait Until Element Is Visible    xpath=(//input[contains(@id,'dealerList')])[position()=1]
+    Click Element    xpath=(//input[contains(@id,'dealerList')])[position()=1]
+    WaitBeingProcess
+    Wait Until Element Is Visible    xpath=//form[@id='PopUpDealerForNewRegisForm']//input[contains(@id,'BtnDealerAddHeader')]
+    Click Element    xpath=//form[@id='PopUpDealerForNewRegisForm']//input[contains(@id,'BtnDealerAddHeader')]
+    WaitBeingProcess
+    Should Not Be Equal    xpath=//input[contains(@id,'dealLocationCd')]@value    "${EMPTY}"
+    ${status}=    CheckClickNextStep    xpath=//td[text()='ยืนยันข้อมูล']    ${ExcelSheetNameOrderFree_NewRegister}    ${MobileNo}    OrderFreeStep-4
+    [Return]    ${status}
+
+OrderFeeStep5
+    [Arguments]    ${MobileNo}
+    [Documentation]    เอา order no มาลง
+    ${status}=    CheckClickNextStep    xpath=//span[contains(@id,'orderNo')]    ${ExcelSheetNameOrderFree_NewRegister}    ${MobileNo}    OrderFreeStep-5-1
+    WaitBeingProcess
+    ##################
+    Wait Until Page Contains Element    xpath=//span[contains(@id,'orderNo')]
+    ${OrderNo}    Get Text    xpath=//span[contains(@id,'orderNo')]
+    ${Row}=    WhatsRow_DataNewRegister    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Mobile}    ${MobileNo}
+    ${Column}=    Whatscolumn_DataNewRegister    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_ORDER No}
+    Put String To Cell    ${ExcelSheetNameOrderFree_NewRegister}    ${Column}${Row}    ${OrderNo}
+    ##################
+    Comment    ${OrderNoShow}=    WaitAndReturnStatus    xpath=//span[contains(@id,'orderNo')]
+    Comment    @{OrderNoAndErrorLog}=    Run Keyword If    ${OrderNoShow}==True    GetResultWhenOrderNoShow
+    ...    ELSE    GetResultWhenOrderNoNotShow
+    Comment    ${Row}=    WhatsRow_DataNewRegister    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Mobile}    ${MobileNo}
+    Comment    ${ColumnORDERNo}=    Whatscolumn_DataNewRegister    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_ORDER No}
+    Comment    ${ColumnRemark}=    Whatscolumn_DataNewRegister    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Remark}
+    Comment    Put String To Cell    ${ExcelSheetNameOrderFree_NewRegister}    ${ColumnORDERNo}${Row}    @{OrderNoAndErrorLog}[0]
+    Comment    Put String To Cell    ${ExcelSheetNameOrderFree_NewRegister}    ${ColumnRemark}${Row}    @{OrderNoAndErrorLog}[1]
+    ##################
+    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+    #for IE
+    Comment    Select Window    title=Certificate Error: Navigation Blocked
+    Sleep    15s    #AeTest
+    Select Window    url=https://sffsit.ais.co.th:8103/SFFWeb/pages/om/om_order_print_for_pay_adven.jsf
+    Comment    Wait Until Element Is Visible    xpath=//a[@id='overridelink']
+    Comment    Click Element    xpath=//a[@id='overridelink']
+    #window print
+    Win Active    Print
+    Comment    Wait For Active Window    Print    60s
+    Control Click    Print    ${EMPTY}    Button11
+    Comment    Mouse Click Drag    TPanel2    949    646    2222    2222
+    Sleep    15s
+    Select Window    url=https://sffsit.ais.co.th:8103/SFFWeb/pages/om/om_order_print_for_pay_adven.jsf
+    Sleep    15s
+    Capture Page Screenshot    ${PathFile}${MobileNo}\\${MobileNo}_OrderFreeStep-5-2.png    #Reciept
+    Close Window
+    Select Window    title=New Registration Payment Advance
+    Capture Page Screenshot    ${PathFile}${MobileNo}\\${MobileNo}_OrderFreeStep-5-3.png    #ordercomplete
+
+CheckClickNextStep
+    [Arguments]    ${VerifyLocator}    ${Sheetnameexcel}    ${MobileNo}    ${StepOrderFree}
+    Scroll Element Into View    xpath=//input[@class='rich-button-next-cps']
+    Capture Page Screenshot    ${PathFile}${MobileNo}\\${MobileNo}_${StepOrderFree}.png
+    Click Element    xpath=//input[@class='rich-button-next-cps']
+    ${StatusShowError}=    CheckAlertMsg    xpath=//dt[@class='default-message-err']    ${Sheetnameexcel}    ${ExcelColumnRemark}    ${OrderFree_NewRegister_Mobile}    ${MobileNo}
+    Run Keyword If    ${StatusShowError}!=False    Wait Until Element Is Visible    ${VerifyLocator}    15s
+    ${status}=    Run Keyword If    ${StatusShowError}!=False    Return From Keyword    False
+    [Return]    ${status}
+
+SelectPackage
+    [Arguments]    ${i}    ${MobileNo}
+    @{Package}=    ReadExcel    ${ExcelSheetNameOrderFree_NewRegister}    ${OrderFree_NewRegister_Package}
+    Wait Until Page Contains Element    xpath=//input[contains(@id,'search')]
+    Execute Javascript    window.jQuery('input[id$="search"]').val('${Package[${i}]}')
+    Click Element    xpath=//img[contains(@src,'icon_btn_search.png')]
+    Wait Until Page Contains Element    xpath=//a[contains(@id,'mainPromotionGroupCriteria')][contains(.,'${Package[${i}]}')]
+    Click Element    xpath=//a[contains(@id,'mainPromotionGroupCriteria')][contains(.,'${Package[${i}]}')]
+    WaitBeingProcess
+    Wait Until Page Contains Element    xpath=//table[@class='gridRequiredField']
+    ${status}=    CheckClickNextStep    xpath=//td[text()='ข้อมูลตัวแทนจำหน่าย']    ${ExcelSheetNameOrderFree_NewRegister}    ${MobileNo}    OrderFreeStep-3
+    WaitBeingProcess
+
+CheckClickSearchIDCard
+    Click Element    xpath=//input[contains(@id,'j_id_id51')]
+    WaitBeingProcess
+    ${Title}    Get Element Attribute    xpath=//select[contains(@id,'accntTitle')]@value
+    ${FirstName}    Get Element Attribute    xpath=//input[contains(@id,'caFristName')]@value
+    ${LastName}    Get Element Attribute    xpath=//input[contains(@id,'caLastName')]@value
+    ${Birthday}    Get Element Attribute    xpath=//input[contains(@id,'birthDt')]@value
+    Should Not Be Equal    "${Title}"    "${EMPTY}"
+    Should Not Be Equal    "${FirstName}"    "${EMPTY}"
+    Should Not Be Equal    "${LastName}"    "${EMPTY}"
+    Should Not Be Equal    "${Birthday}"    "${EMPTY}"
+
+VerifyDataCardID
+    [Arguments]    ${IdCard}    ${i}    ${MobileNo}
+    ${Tambon}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id170')]@value
+    ${district}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id179')]@value
+    ${zipcode}    Get Element Attribute    xpath=//input[@id='frmNewRegist:postalCodeCA']@value
+    ${province}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id200')]@value
+    ${tel}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id207')]@value
+    ${status}=    Run Keyword If    "${Tambon}" != "${EMPTY}" and "${district}" != "${EMPTY}" and "${zipcode}" != "${EMPTY}" and "${province}" != "${EMPTY}" and "${tel}" != "${EMPTY}"    CheckClickNextStep    xpath=//span[text()='ข้อมูลหมายเลขจดทะเบียน']    ${ExcelSheetNameOrderFree_NewRegister}    ${MobileNo}
+    ...    OrderFreeStep-1
+    WaitBeingProcess
+    [Return]    ${status}
+
+GetResultWhenOrderNoShow
+    ${OrderNo}    Get Text    xpath=//span[contains(@id,'orderNo')]
+    ${ErrorLog}    Set Variable    ${none}
+    [Return]    ${OrderNo}    ${ErrorLog}
+
+GetResultWhenOrderNoNotShow
+    ${OrderNo}    Get Text    ${none}
+    ${ErrorLog}    Set Variable    Order No. is not show
+    [Return]    ${OrderNo}    ${ErrorLog}

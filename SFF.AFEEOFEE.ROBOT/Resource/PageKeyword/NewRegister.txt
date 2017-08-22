@@ -1,0 +1,115 @@
+*** Settings ***
+Library           Selenium2Library    15
+Library           String
+Resource          PublicKeyword.txt
+Resource          ExcelKeyword.txt
+Resource          ../MasterVariable.txt
+
+*** Keywords ***
+GoToAccountAssetInfomation
+    Mouse Over    xpath=//a[@rel='ddsubmenu3']
+    Wait Until Element Is Visible    xpath=//a[text()='Account Asset Information']
+    Click Element    xpath=//a[text()='Account Asset Information']
+
+NewRegister
+    @{ListIDcardNo}    ReadExcel    ${ExcelSheetName_NewRegister}    ${AccoutFreeNewRegister_IDCard}
+    @{ListMobileNo}    ReadExcel    ${ExcelSheetName_NewRegister}    ${ExcelSheetName_NewRegister_MobileNo}
+    @{ListSimNo}    ReadExcel    ${ExcelSheetName_NewRegister}    ${AccoutFreeNewRegister_SIM}
+    @{Customize Promotion}    ReadExcel    ${ExcelSheetName_NewRegister}    ${AccoutFreeNewRegister_CustomizePromotion}
+    ${ListIndex}    Get Length    ${ListIDcardNo}
+    : FOR    ${i}    IN RANGE    0    ${ListIndex}
+    \    GoToAccountAssetInfomation
+    \    WaitAndInputText    xpath=//input[contains(@id,'idNo')]    ${ListIDcardNo[${i}]}
+    \    WaitAndClickElement    xpath=//input[contains(@id,'id45')]
+    \    WaitBeingProcess
+    \    Wait Until Element Is Visible    xpath=//div[contains(@id,'frmlistTog_body')]
+    \    WaitAndClickElement    xpath=(//table[@id='frmlist:acclist']//tr[td[3][text()='Billing']])[position()=1]/td[2]/a
+    \    WaitBeingProcess
+    \    Comment    Wait Until Element Is Visible    xpath=//select[contains(@id,'idSelectOneOrderType')]
+    \    #Order Service Instance
+    \    WaitAndClickElement    xpath=//select[contains(@id,'idSelectOneOrderType')]//option[text()='New Registration']
+    \    WaitBeingProcess
+    \    WaitAndClickElement    xpath=//img[contains(@src,'Go.png')]
+    \    WaitBeingProcess
+    \    WaitAndInputText    xpath=//input[contains(@id,'mobileNo0')]    ${ListMobileNo[${i}]}
+    \    WaitAndClickElement    xpath=//div[contains(@id,'j_id_id22pc5_header')]
+    \    WaitBeingProcess
+    \    Comment    Wait Until Element Is Visible    xpath=//div[contains(@id,'j_id_id1pc5_body')]//li[contains(.,'Pending Registration ')]
+    \    ${ProcessStatus}=    CheckAlertMsgModified    xpath=//div[contains(@id,'j_id_id1pc5_body')]//ul[@class='contentlabelform']/li[@style='color: red'][1]    ${ExcelSheetName_NewRegister}    ${ExcelSheetName_NewRegister_Remark}    ${ExcelSheetName_NewRegister_MobileNo}
+    \    ...    ${ListMobileNo[${i}]}
+    \    Run Keyword If    ${ProcessStatus}==False    Continue For Loop
+    \    WaitAndInputText    xpath=//input[contains(@id,'serialNo0')]    ${ListSimNo[${i}]}
+    \    WaitAndClickElement    xpath=//div[contains(@id,'j_id_id22pc5_header')]
+    \    WaitBeingProcess
+    \    ${ProcessStatus}=    CheckAlertMsgModified    xpath=//div[contains(@id,'j_id_id1pc5_body')]//ul[@class='contentlabelform']/li[@style='color: red'][1]    ${ExcelSheetName_NewRegister}    ${ExcelSheetName_NewRegister_Remark}    ${ExcelSheetName_NewRegister_MobileNo}
+    \    ...    ${ListMobileNo[${i}]}
+    \    Run Keyword If    ${ProcessStatus}==False    Continue For Loop
+    \    WaitAndClickElement    xpath=//select[@id='pageIncludeId:FormApplyValueEdit:ddlReason0']
+    \    WaitAndClickElement    xpath=//select[@id='pageIncludeId:FormApplyValueEdit:ddlReason0']//option[@value='1000-Zeer Com Fair 2009']
+    \    WaitBeingProcess
+    \    #Click Customize Promotion
+    \    WaitAndClickElement    xpath=//input[@value='Customize Promotion']
+    \    #Search Promotion
+    \    WaitAndInputText    xpath=//input[contains(@id,'cusProPromotionName')]    ${Customize Promotion[${i}]}
+    \    WaitAndClickElement    xpath=//input[@value='Search']
+    \    WaitBeingProcess
+    \    WaitAndClickElement    xpath=//td[text()='${Customize Promotion[${i}]}']/..//input[contains(@id,'selectedPro')]
+    \    WaitBeingProcess
+    \    WaitAndClickElement    xpath=//input[@value='Add']
+    \    WaitBeingProcess
+    \    WaitAndClickElement    xpath=//input[@type='submit']
+    \    Wait Until Element Is Visible    xpath=//div[contains(@id,'j_id_id710_header')]/..//td[text()='${Customize Promotion[${i}]}']    30    #j_id_id12
+    \    WaitBeingProcess
+    \    WaitAndClickElement    xpath=//form[@id='frmButton']//input[contains(@id,'SubmitOrderButton')]
+    \    WaitBeingProcess
+    \    #Get Alert Messege
+    \    ${AlertMsgShow}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//div[contains(@id,'j_id_id12_body')]//ul[@class='contentlabelform']/li[@style='color: red']
+    \    ${GetAlertMsg}=    Run Keyword And Return If    ${AlertMsgShow}==True    Get Text    xpath=//div[contains(@id,'j_id_id12_body')]//ul[@class='contentlabelform']/li[1]
+    \    #Check Write Log To Excel
+    \    Run Keyword If    ${AlertMsgShow}==True    InsertDataToExcel    ${GetAlertMsg}    ${ExcelSheetName_NewRegister}    ${ExcelSheetName_NewRegister_Remark}
+    \    ...    ${ExcelSheetName_NewRegister_MobileNo}    ${ListMobileNo[${i}]}
+    \    ...    ELSE    CheckOrderStatusAndWriteToExcel    ${ListMobileNo[${i}]}
+    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+
+checkSameIDcard
+
+CheckAlertMsgForNewRegister
+    [Arguments]    ${i}
+    ${GetAlertMsg}=    Get Element Attribute    xpath=//div[contains(@id,'j_id_id1pc5_body')]//ul[@class='contentlabelform']/li@style
+    ${GetAlertMsg}=    Convert To Uppercase    ${GetAlertMsg}
+    Run Keyword If    '${GetAlertMsg}'=='COLOR: RED'    Run Keywords    InsertDataToExcel    xpath=//div[contains(@id,'j_id_id1pc5_body')]//ul[@class='contentlabelform']    AccoutFreeNewRegister    Remark
+    ...    Mobile No    ${ListMobileNo[${i}]}
+    ...    AND    Exit For Loop
+
+TimeOutAndReSubmitOrder
+    [Arguments]    ${GetAlertMsg}
+    Wait Until Keyword Succeeds    2x    5s    Re-SubmitOrder
+    ${GetOrderStatus}=    WaitAndGetText    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]
+    ${AlertMsgOrOrderStatus}=    Run Keyword And Return If    '${GetOrderStatus}'!='Completed'    Set Variable    ${GetAlertMsg}
+    ...    ELSE    Set Variable    ${GetOrderStatus}
+    [Return]    ${AlertMsgOrOrderStatus}
+
+AlertMessageNotShow
+    ${GetOrderStatus}=    Get Text    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]
+    Run Keyword If    '${GetOrderStatus}'=='Submitted'    Run Keywords    TimeOutAndReSubmitOrder
+    ...    ELSE    Set Variable    ${GetOrderStatus}
+
+Re-SubmitOrder
+    WaitAndClickElement    xpath=//form[@id='frmButton']//input[contains(@id,'SubmitOrderButton')]
+    WaitBeingProcess
+    Wait Until Element Is Visible    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')][@value='Completed']
+
+CheckOrderStatusAndWriteToExcel
+    [Arguments]    ${ListMobileNo}
+    Wait Until Keyword Succeeds    3x    5s    Re-RefreshButtonAndWriteOrderStatusToExcel
+    Wait Until Element Is Visible    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]
+    ${OrderNo}=    WaitAndGetElementAttribute    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]    @value
+    ${OrderStatusValue}=    WaitAndGetElementAttribute    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]    @value
+    InsertDataToExcel    ${OrderNo}    ${ExcelSheetName_NewRegister}    ${AccoutFreeNewRegister_OrderNo}    ${ExcelSheetName_NewRegister_MobileNo}    ${ListMobileNo}
+    InsertDataToExcel    ${OrderStatusValue}    ${ExcelSheetName_NewRegister}    ${ExcelSheetName_NewRegister_Remark}    ${ExcelSheetName_NewRegister_MobileNo}    ${ListMobileNo}
+
+Re-RefreshButtonAndWriteOrderStatusToExcel
+    WaitAndClickElement    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'RefreshButton')]
+    WaitBeingProcess
+    ${GetOrderStatus}=    WaitAndGetElementAttribute    xpath=//div[@id='j_id_id12_body']//input[contains(@id,'hoOrderStatus')]    @value
+    Should Be Equal    Completed    ${GetOrderStatus}

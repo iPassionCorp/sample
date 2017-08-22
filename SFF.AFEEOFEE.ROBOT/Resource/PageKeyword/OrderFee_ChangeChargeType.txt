@@ -1,0 +1,284 @@
+*** Settings ***
+Library           Selenium2Library    15
+Resource          ExcelKeyword.txt
+Resource          PublicKeyword.txt
+Library           String
+Resource          OrderFeeKeyword.txt
+
+*** Keywords ***
+GoToCustomerService
+    Scroll Element Into View    xpath=//div[@class='icon-home']
+    Wait Until Element Is Visible    xpath=//div[@class='icon-home']    15s
+    Click Element    xpath=//div[@class='icon-home']
+    Wait Until Element Is Visible    xpath=//img[contains(@src,'csp.png')]    15s
+    Click Element    xpath=//img[contains(@src,'csp.png')]
+    Comment    Wait Until Element Is Visible    xpath=//img[contains(@src,'sidebar_menu_header.png')]    15s
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'txtmobile')]    30s
+    Create Directory    ${FloderOrderFee_DataPostPaid}
+    @{MobileNo}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    Mobile Number
+    ${ListIndex}=    Get Length    ${MobileNo}
+    : FOR    ${Var}    IN RANGE    0    ${ListIndex}
+    \    Wait Until Element Is Visible    xpath=//input[contains(@id,'txtmobile')]
+    \    Input Text    xpath=//input[contains(@id,'txtmobile')]    ${MobileNo[${Var}]}
+    \    Click Element    xpath=//input[contains(@id,'searchAssetFirstSearch')]
+    \    WaitBeingProcess
+    \    ${StatusExitLoop}=    AddUserIdentification    ${Var}    ${MobileNo[${Var}]}    DataPostPaid-1
+    \    Run Keyword If    "${StatusExitLoop}"=="FALSE"    Run Keywords    Scroll Element Into View    xpath=//img[contains(@src,'icon4.png')]/..//a[contains(.,'Customer Portal')]
+    \    ...    AND    Click Element    xpath=//img[contains(@src,'icon4.png')]/..//a[contains(.,'Customer Portal')]
+    \    ...    AND    Continue For Loop
+
+AddUserIdentification
+    [Arguments]    ${Var}    ${MobileNo}    ${StepOrderFree}
+    @{customerType}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ประเภทลูกค้า
+    @{Title}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    คำนำหน้า
+    @{fristName}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ชื่อ
+    @{lastName}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    นามสกุล
+    @{cardType}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ประเภทบัตร
+    @{idCardNo}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    หมายเลขบัตร
+    @{kissueDataInputDate}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    วันออกบัตร
+    @{kbhdateInputDate}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    วันเกิด
+    @{kexpdateInputDate}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    บัตรหมดอายุ
+    @{Gender}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    เพศ
+    @{houseNum}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    บ้านเลขที่
+    @{soi}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ตรอก/ซอย
+    @{mooBan}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    หมู่ที่
+    @{Build}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    อาคาร
+    @{Village}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    หมู่บ้าน
+    @{Floor}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ชั้น
+    @{Room}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ห้อง
+    @{Tambon}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ตำบล/แขวง
+    @{Road}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ถนน
+    @{Province}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    จังหวัด
+    @{Amphur}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    อำเภอ/เขต
+    @{Zipcode}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    รหัสไปรษณีย์
+    Wait Until Element Is Visible    xpath=//img[contains(@src,'idenImage.png')]    30s
+    Mouse Over    xpath=//img[contains(@src,'idenImage.png')]
+    Click Element    xpath=//img[contains(@src,'idenImage.png')]
+    Wait Until Element Is Visible    xpath=//span[contains(.,'ข้อมูลที่อยู่ในบัตรประจำตัวประชาชน')]
+    Element Should Be Visible    xpath=//input[contains(@id,'mobileNoPrepaidIden')][@value='${MobileNo}']
+    Run Keyword If    "${customerType[${Var}]}"!="None"    Click Element    xpath=//label[contains(.,'${customerType[${Var}]}')]/..//input[contains(@id,'customerTypeRTBS')]
+    WaitBeingProcess
+    Run Keyword If    "${Title[${Var}]}"!="None"    Run Keywords    Click Element    xpath=//select[contains(@id,'caTitle')]
+    ...    AND    Click Element    xpath=//select[contains(@id,'caTitle')]//option[text()='${Title[${Var}]}']
+    Run Keyword If    "${fristName[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'fristName')]    ${fristName[${Var}]}
+    Run Keyword If    "${lastName[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'lastName')]    ${lastName[${Var}]}
+    Run Keyword If    "${cardType[${Var}]}"!="None"    Run Keywords    Click Element    xpath=//select[contains(@id,'cardType')]
+    ...    AND    Click Element    xpath=//select[contains(@id,'cardType')]//option[text()='${cardType[${Var}]}']
+    WaitBeingProcess
+    Run Keyword If    "${idCardNo[${Var}]}"!="None"    Run Keywords    Input Text    xpath=//input[contains(@id,'idCardNo')]    ${idCardNo[${Var}]}
+    ...    AND    Focus    xpath=//input[@id='mainForm:kissueDataInputDate']
+    ...    AND    WaitBeingProcess
+    Run Keyword If    "${kissueDataInputDate[${Var}]}"!="None"    Execute Javascript    window.jQuery('#mainForm\\\\:kissueDataInputDate').val('${kissueDataInputDate[${Var}]}')
+    Run Keyword If    "${kbhdateInputDate[${Var}]}"!="None"    Execute Javascript    window.jQuery('#mainForm\\\\:kbhdateInputDate').val('${kbhdateInputDate[${Var}]}')
+    Run Keyword If    "${kexpdateInputDate[${Var}]}"!="None"    Execute Javascript    window.jQuery('#mainForm\\\\:kexpdateInputDate').val('${kexpdateInputDate[${Var}]}')
+    Run Keyword If    "${Gender[${Var}]}"!="None"    Execute Javascript    window.jQuery('#mainForm\\\\:gender').val('${Gender[${Var}]}')
+    WaitBeingProcess
+    Run Keyword If    "${houseNum[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'houseNum')]    ${houseNum[${Var}]}
+    Run Keyword If    "${houseNum[${Var}]}"!="None"    Execute Javascript    window.jQuery('#mainForm\\:houseNum').val('1101')
+    Run Keyword If    "${soi[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'soi')]    ${soi[${Var}]}
+    Run Keyword If    "${mooBan[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'moo')]    ${mooBan[${Var}]}
+    Run Keyword If    "${Build[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'buildingName')]    ${Build[${Var}]}
+    Run Keyword If    "${Village[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'mooBan')]    ${Village[${Var}]}
+    Run Keyword If    "${Floor[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'floor')]    ${Floor[${Var}]}
+    Run Keyword If    "${Room[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'room')]    ${Room[${Var}]}
+    Run Keyword If    "${Tambon[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'tumbol')]    ${Tambon[${Var}]}
+    Run Keyword If    "${Road[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'streetName')]    ${Road[${Var}]}
+    Run Keyword If    "${Province[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'Province')]    ${Province[${Var}]}
+    Run Keyword If    "${Amphur[${Var}]}"!="None"    Input Text    xpath=//input[contains(@id,'amphur')]    ${Amphur[${Var}]}
+    Run Keyword If    "${Zipcode[${Var}]}"!="None"    Run Keywords    Scroll Element Into View    xpath=//input[contains(@id,'postalCode')]
+    ...    AND    Input Text    xpath=//input[contains(@id,'postalCode')]    ${Zipcode[${Var}]}
+    ...    AND    Click Element    xpath=//img[contains(@src,'sff_open_popup_icon.png')]
+    ...    AND    WaitBeingProcess
+    ...    AND    Wait Until Element Is Visible    xpath=//div[@id='showZipcodeHeader']
+    ...    AND    Wait Until Element Is Visible    xpath=//input[contains(@id,'dtshowZipcode')]
+    ...    AND    Click Element    xpath=(//input[contains(@id,'dtshowZipcode')])[position()=1]
+    ...    AND    Click Element    xpath=//input[contains(@id,'submit')]
+    ...    AND    WaitBeingProcess
+    WaitBeingProcess
+    Click Element    xpath=//input[contains(@id,'btnPI')]
+    ${Status}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${StatusExitLoop}=    Run Keyword If    ${Status}==True    CheckAndWriteErrorOnExcel    ${MobileNo}
+    Run Keyword If    ${Status}==False    Run Keywords    Wait Until Element Is Visible    xpath=//span[contains(.,'ทำรายการเรียบร้อยแล้ว ')]
+    ...    AND    Capture Page Screenshot    ${FloderOrderFee_DataPostPaid}${MobileNo}_${StepOrderFree}.png
+    ...    AND    Scroll Element Into View    xpath=//img[contains(@src,'icon4.png')]/..//a[contains(.,'Customer Portal')]
+    ...    AND    Click Element    xpath=//img[contains(@src,'icon4.png')]/..//a[contains(.,'Customer Portal')]
+    [Return]    ${StatusExitLoop}
+
+CheckAndWriteErrorOnExcel
+    [Arguments]    ${MobileNo}
+    Scroll Element Into View    xpath=//dt[@class='default-message-err']
+    ${ErrorMSG}=    Get Text    xpath=//dt[@class='default-message-err']
+    ${Column}=    Whatscolumn_DataNewRegister    ${ExcelSheetName_ChangeChargeType_Pre}    Remark
+    ${ROW}=    WhatsRow_DataNewRegister    ${ExcelSheetName_ChangeChargeType_Pre}    ${ChangeChargeType_MobileNumber}    ${MobileNo}
+    @{CountErrorMSG}=    Create List
+    ${MatchErrorMSG}=    Get Matching Xpath Count    xpath=//dt[@class='default-message-err']
+    ${MatchErrorMSG}=    Evaluate    ${MatchErrorMSG}+${1}
+    : FOR    ${i}    IN RANGE    1    ${MatchErrorMSG}
+    \    ${ReadMSG}=    Get Text    xpath=(//dt[@class='default-message-err'])[position()=${i}]
+    \    Append To List    ${CountErrorMSG}    ${ReadMSG}
+    ${CountErrorMSG}=    Convert To String    ${CountErrorMSG}
+    ${CountErrorMSG}=    Remove String    ${CountErrorMSG}    u'    '    [    ]
+    CustomXlsxLibrary.Put String To Cell    ${ExcelSheetName_ChangeChargeType_Pre}    ${Column}${ROW}    ${CountErrorMSG}
+    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+    Return From Keyword    FALSE
+    [Return]    ${StatusExitLoop}
+
+OrderFee_ChangeChargeType
+    [Arguments]    @{List}
+    Wait Until Element Is Visible    xpath=//img[contains(@src,'change_charge_type_pre_to_post_pay.png')]    30s
+    Scroll Element Into View    xpath=//img[contains(@src,'change_charge_type_pre_to_post_pay.png')]
+    Click Element    xpath=//img[contains(@src,'change_charge_type_pre_to_post_pay.png')]
+    WaitBeingProcess
+    @{MobileNo}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    Mobile Number
+    Create Directory    ${FloderOrderFee_ChangChargeType}
+    ${ListIndex}    Get Length    ${List}
+    : FOR    ${i}    IN RANGE    0    ${ListIndex}
+    \    ${status}=    OrderFee_ChangeChargeType_Step1    ${List[${i}]}    ${i}    ${MobileNo[${i}]}
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFee_ChangeChargeType_Step2    ${i}    ${MobileNo[${i}]}    #Mobile,Sim,Emie
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFee_ChangeChargeType_Step3    ${i}    ${MobileNo[${i}]}    #Promotion
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFee_ChangeChargeType_Step4    ${MobileNo[${i}]}
+    \    Run Keyword If    ${status}==False    Continue For Loop
+    \    ${status}=    OrderFee_ChangeChargeType_Step5    ${MobileNo[${i}]}    OrderFreeStep-5-2
+    \    Run Keyword If    ${status}==False    Continue For Loop
+
+OrderFee_ChangeChargeType_Step1
+    [Arguments]    ${IdCard}    ${i}    ${MobileNo}
+    Wait Until Element Is Visible    xpath=//img[contains(@src,'regis_info.png')]/../..//td[contains(.,'ข้อมูลลงทะเบียน')]
+    Input Text    xpath=//input[contains(@id,'idcardno')]    ${IdCard}
+    Comment    WaitBeingProcess
+    ${StatusLoadData}=    Run Keyword And Return Status    CheckClickSearchIDCard
+    ${status}=    Run Keyword If    ${StatusLoadData} == False    Run Keyword And Return    NewRegister_ChangeChargeType    ${IdCard}    ${i}
+    ...    ${MobileNo}
+    ...    ELSE    Run Keyword And Return    VerifyIDCard    ${IdCard}    ${i}    ${MobileNo}
+
+OrderFee_ChangeChargeType_Step2
+    [Arguments]    ${i}    ${MobileNo}
+    @{Mobile}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ${ChangeChargeType_MobileNumber}
+    @{EMIE}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Pre}    ${ChangeChargeType_IMEIPass}
+    Wait Until Element Is Visible    xpath=//span[contains(@id,chooseMobile)][contains(.,'ข้อมูลหมายเลขจดทะเบียน')]    15s
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'inputImei')]
+    Input Text    xpath=//input[contains(@id,'inputImei')]    ${EMIE[${i}]}
+    Click Element    //img[contains(@src,'logo_ais_new_regis.png')]
+    Comment    Press Key    xpath=//input[contains(@id,'inputImei')]    \\13
+    WaitBeingProcess
+    Scroll Element Into View    xpath=//input[contains(@id,'brand')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'brand')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'model')]
+    ${StatusErrorStep}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${status}=    Run Keyword If    ${StatusErrorStep}==True    Run Keyword And Return    CheckErrorOrderFeeStep2_CCT    ${MobileNo[${i}]}
+    ${status}=    CheckNextStep    xpath=//td[text()='แพ็กเกจ']    ${ExcelSheetName_ChangeChargeType_Post}    ${MobileNo}    OrderFreeStep-2
+    [Return]    ${status}
+
+OrderFee_ChangeChargeType_Step3
+    [Arguments]    ${i}    ${MobileNo}
+    ${StatusError}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${ErrorMessage}=    Run Keyword If    ${StatusError} == True    Get Text    xpath=(//dt[@class='default-message-err'])[position()=1]
+    ${status}=    Run Keyword If    ${StatusError} == True    Return From Keyword    False
+    Run Keyword If    ${StatusError} == False    SelectNewPackage    ${i}    ${MobileNo}
+    [Return]    ${status}
+
+OrderFee_ChangeChargeType_Step4
+    [Arguments]    ${MobileNo}
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'dealerCode')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'dealLocationCd')]
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'dealerASCCode')]
+    Should Not Be Equal    xpath=//input[contains(@id,'dealLocationCd')]@value    "${EMPTY}"
+    ${status}=    CheckNextStep    xpath=//td[text()='ยืนยันข้อมูล']    ${ExcelSheetName_ChangeChargeType_Post}    ${MobileNo}    OrderFreeStep-4
+    [Return]    ${status}
+
+OrderFee_ChangeChargeType_Step5
+    [Arguments]    ${MobileNo}    ${StepOrderFree}
+    ${status}=    CheckNextStep    xpath=//span[contains(@id,'orderNo')]    ${ExcelSheetName_ChangeChargeType_Post}    ${MobileNo}    OrderFreeStep-5-1
+    WaitBeingProcess
+    ${OrderNo}=    Get Text    xpath=//span[contains(@id,'orderNo')]
+    ${Row}=    WhatsRow_DataNewRegister    ${ExcelSheetName_ChangeChargeType_Post}    ${ChangeChargeType_MobileNumber}    ${MobileNo}
+    ${Column}=    Whatscolumn_DataNewRegister    ${ExcelSheetName_ChangeChargeType_Post}    ${ChangeChargeType_OrderFee}
+    CustomXlsxLibrary.Put String To Cell    ${ExcelSheetName_ChangeChargeType_Post}    ${Column}${Row}    ${OrderNo}
+    Capture Page Screenshot    ${FloderOrderFee_ChangChargeType}${MobileNo}_${StepOrderFree}.png
+    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+
+NewRegister_ChangeChargeType
+    [Arguments]    ${Idfromexcel}    ${i}    ${MobileNo}
+    @{Title}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    คำนำหน้า
+    @{FirstName}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    ชื่อ
+    @{LastName}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    นามสกุล
+    @{Birthday}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    วันเกิด
+    @{Home}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    บ้านเลขที่
+    @{Zipcode}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    รหัสไปรษณีย์
+    @{Tel}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    Tel
+    ${statusExcel}=    Run Keyword If    "${Title[${i}]}"=="None" and "${FirstName[${i}]}"=="None" and "${LastName[${i}]}"=="None" and "${Birthday[${i}]}"=="None" and "${Home[${i}]}"=="None" and "${Zipcode[${i}]}"=="None" and "${Tel[${i}]}"=="None"    Return From Keyword    False
+    ...    ELSE    Set Variable    True
+    Run Keyword If    ${statusExcel} == True    Run Keywords    Select From List By Value    xpath=//select[contains(@id,'accntTitle')]    ${Title[${i}]}
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@id,'caFristName')]    ${FirstName[${i}]}
+    ...    AND    WaitBeingProcess
+    ...    AND    Click Element    xpath=//input[contains(@id,'caLastName')]
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@id,'caLastName')]    ${LastName[${i}]}
+    ...    AND    Click Element    xpath=//input[contains(@id,'birthDt')]
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@id,'birthDt')]    ${Birthday[${i}]}
+    ...    AND    Scroll Element Into View    xpath=//input[contains(@id,'txtAddress')]
+    ...    AND    Input Text    xpath=//input[contains(@id,'txtAddress')]    ${Home[${i}]}
+    ...    AND    Input Text    xpath=//input[@id='frmNewRegist:postalCodeCA']    ${Zipcode[${i}]}
+    ...    AND    Execute Javascript    window.jQuery('#frmNewRegist\\\\:BtnZipcodeUp').click()
+    ...    AND    WaitBeingProcess
+    ...    AND    Wait Until Element Is Visible    xpath=(//input[contains(@id,'boolSelected')])[position()=1]
+    ...    AND    Click Element    xpath=(//input[contains(@id,'boolSelected')])[position()=1]
+    ...    AND    Click Element    xpath=//input[@value='OK ']
+    ...    AND    WaitBeingProcess
+    ...    AND    Input Text    xpath=//input[contains(@name,'j_id_id220')]    ${Tel[${i}]}
+    ${status}=    CheckNextStep    xpath=//span[text()='ข้อมูลหมายเลขจดทะเบียน']    ${ExcelSheetName_ChangeChargeType_Post}    ${MobileNo}    NewRegister_OrderFreeStep-1
+    [Return]    ${status}
+
+VerifyIDCard
+    [Arguments]    ${IdCard}    ${i}    ${MobileNo}
+    ${Tambon}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id183')]@value
+    ${district}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id192')]@value
+    ${zipcode}    Get Element Attribute    xpath=//input[@id='frmNewRegist:postalCodeCA']@value
+    ${province}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id213')]@value
+    ${tel}    Get Element Attribute    xpath=//input[contains(@name,'j_id_id220')]@value
+    ${status}=    Run Keyword If    "${Tambon}" != "${EMPTY}" and "${district}" != "${EMPTY}" and "${zipcode}" != "${EMPTY}" and "${province}" != "${EMPTY}" and "${tel}" != "${EMPTY}"    CheckNextStep    xpath=//span[text()='ข้อมูลหมายเลขจดทะเบียน']    ${ExcelSheetName_ChangeChargeType_Post}    ${MobileNo}
+    ...    OrderFreeStep-1
+    WaitBeingProcess
+    [Return]    ${status}
+
+CheckNextStep
+    [Arguments]    ${VerifyLocator}    ${Sheetnameexcel}    ${MobileNo}    ${StepOrderFree}
+    Scroll Element Into View    xpath=//input[contains(@class,'rich-button-next-cps')]
+    Capture Page Screenshot    ${FloderOrderFee_ChangChargeType}${MobileNo}_${StepOrderFree}.png
+    Click Element    xpath=//input[contains(@class,'rich-button-next-cps')]
+    ${StatusShowError}=    CheckAlertMsg    xpath=//dt[@class='default-message-err']    ${Sheetnameexcel}    ${ChangeChargeType_Remark}    ${ChangeChargeType_MobileNumber}    ${MobileNo}
+    Run Keyword If    ${StatusShowError}!=False    Wait Until Element Is Visible    ${VerifyLocator}    15s
+    ${status}=    Run Keyword If    ${StatusShowError}!=False    Return From Keyword    False
+    [Return]    ${status}
+
+CheckErrorOrderFeeStep2_CCT
+    [Arguments]    ${Mobile}
+    ${StatusError}=    Run Keyword And Return Status    Wait Until Element Is Visible    xpath=//dt[@class='default-message-err']
+    ${ErrorMessage}=    Run Keyword If    ${StatusError} == True    Get Text    xpath=(//dt[@class='default-message-err'])[position()=1]
+    ${Row}=    WhatsRow_DataNewRegister    ${ExcelSheetName_ChangeChargeType_Post}    ${ChangeChargeType_MobileNumber}    ${Mobile}
+    ${Column}=    Whatscolumn_DataNewRegister    ${ExcelSheetName_ChangeChargeType_Post}    ${ChangeChargeType_Remark}
+    Run Keyword If    "${ErrorMessage}"!="${None}"    Run Keywords    CustomXlsxLibrary.Put String To Cell    ${ExcelSheetName_ChangeChargeType_Post}    ${Column}${Row}    ${ErrorMessage}
+    ...    AND    CustomXlsxLibrary.Save Excel    ${PathFile}${ResultExcel}
+    ...    AND    Return From Keyword    False
+    [Return]    ${status}
+
+SelectNewPackage
+    [Arguments]    ${i}    ${MobileNo}
+    @{Package}=    ReadExcel    ${ExcelSheetName_ChangeChargeType_Post}    แพ็กเกจ
+    Wait Until Element Is Visible    xpath=//input[contains(@id,'search')]
+    Input Text    xpath=//input[contains(@id,'search')]    ${Package[${i}]}
+    Scroll Element Into View    xpath=//a[contains(@id,'j_id_id288')]/..//img[contains(@src,'icon_btn_search.png')]
+    Click Element    xpath=//img[contains(@src,'icon_btn_search.png')]
+    ${dataSearch}    Get Element Attribute    xpath=//input[contains(@id,'search')]@value
+    Wait Until Element Is Visible    xpath=//a[contains(@id,'mainPromotionGroupCriteria')][contains(.,'${Package[${i}]}')]
+    Click Element    xpath=//a[contains(@id,'mainPromotionGroupCriteria')][contains(.,'${Package[${i}]}')]
+    WaitBeingProcess
+    Wait Until Element Is Visible    xpath=//table[@class='gridRequiredField']
+    ${pro}    Get Matching Xpath Count    xpath=//a[contains(.,'${dataSearch}')]
+    Should Not Be Equal    1    ${pro}
+    ${status}=    CheckNextStep    xpath=//td[text()='ข้อมูลตัวแทนจำหน่าย']    ${ExcelSheetName_ChangeChargeType_Post}    ${MobileNo}    OrderFreeStep-3
