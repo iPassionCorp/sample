@@ -8,6 +8,9 @@ Library  Selenium2Library
 
 *** Test Cases ***
 Order New Registration
+    open browser
+    wait until page contains
+    input text
 
 Order New Registration Prospect
 
