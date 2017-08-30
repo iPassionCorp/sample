@@ -7,20 +7,9 @@ Library  Selenium2Library
 
 
 *** Test Cases ***
-Order New Registration
-    open browser
-    wait until page contains
-    input text
-
-Order New Registration Prospect
-
-Order Change Service
-
-Order Change Promotion
-
-Order Disconnect Terminate
-
-Transaction Prepaid Preperation
-
-Transaction First Activate
-
+Test Case1
+    [Documentation]  Say somethings
+    [Tags]  Smoke
+    open browser  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf  chrome
+    sleep  3 s
+    close browser

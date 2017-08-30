@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170828 23:40:06.327" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/Tests/Sff.robot" id="s1" name="Sff">
+<test id="s1-t1" name="Test Case1">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20170828 23:40:06.549" level="INFO">Opening browser 'chrome' to base url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170828 23:40:08.856" starttime="20170828 23:40:06.548"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3 s</arg>
+</arguments>
+<msg timestamp="20170828 23:40:11.859" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170828 23:40:11.859" starttime="20170828 23:40:08.857"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170828 23:40:12.317" starttime="20170828 23:40:11.860"></status>
+</kw>
+<doc>Say somethings</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170828 23:40:12.318" critical="yes" starttime="20170828 23:40:06.547"></status>
+</test>
+<doc>SFF Automate Testing Framework</doc>
+<status status="PASS" endtime="20170828 23:40:12.320" starttime="20170828 23:40:06.333"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Sff" pass="1">Sff</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
