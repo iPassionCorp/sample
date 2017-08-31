@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f152073a-ae54-46c9-ad09-bddd965d3032" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Transaction Management/Transaction_Prepaid_Preperation.robot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Resources/Order New Registration.robot" afterPath="$PROJECT_DIR$/Resources/Order Management/Order_New_Registration.robot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/log.html" afterPath="$PROJECT_DIR$/Results/log.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/output.xml" afterPath="$PROJECT_DIR$/Results/output.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/report.html" afterPath="$PROJECT_DIR$/Results/report.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Sff.robot" afterPath="$PROJECT_DIR$/Tests/Sff.robot" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +19,8 @@
       <file leaf-file-name="Sff.robot" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/Sff.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding>
                 <element signature="e#0#88#0" expanded="true" />
               </folding>
@@ -245,8 +245,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/Sff.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
           <folding>
             <element signature="e#0#88#0" expanded="true" />
           </folding>
