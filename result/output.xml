@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170901 18:27:08.261" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/sff/sff.robot" id="s1" name="Sff">
+<test id="s1-t1" name="Test Case1">
+<kw type="setup" name="Begin Web Test" library="Sff">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20170901 18:27:09.324" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170901 18:27:37.320" starttime="20170901 18:27:09.324"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf</arg>
+</arguments>
+<msg timestamp="20170901 18:27:37.321" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170901 18:27:41.085" starttime="20170901 18:27:37.321"></status>
+</kw>
+<status status="PASS" endtime="20170901 18:27:41.086" starttime="20170901 18:27:09.317"></status>
+</kw>
+<kw name="Valid Login" library="Sff">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20170901 18:27:46.142" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170901 18:27:46.142" starttime="20170901 18:27:41.088"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id="frm:username"]</arg>
+<arg>porntipp</arg>
+</arguments>
+<msg timestamp="20170901 18:27:46.144" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
+<status status="PASS" endtime="20170901 18:27:46.483" starttime="20170901 18:27:46.143"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id="frm:password"]</arg>
+<arg>0917#Lek</arg>
+</arguments>
+<msg timestamp="20170901 18:27:46.484" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
+<status status="PASS" endtime="20170901 18:27:46.688" starttime="20170901 18:27:46.483"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input</arg>
+</arguments>
+<msg timestamp="20170901 18:27:46.689" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
+<status status="PASS" endtime="20170901 18:27:48.482" starttime="20170901 18:27:46.689"></status>
+</kw>
+<status status="PASS" endtime="20170901 18:27:48.483" starttime="20170901 18:27:41.087"></status>
+</kw>
+<kw name="Search Order History" library="Sff">
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element specified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div</arg>
+</arguments>
+<msg timestamp="20170901 18:27:48.485" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
+<status status="PASS" endtime="20170901 18:27:48.864" starttime="20170901 18:27:48.484"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@id="ddsubmenu3"]/li[3]/a</arg>
+</arguments>
+<msg timestamp="20170901 18:27:48.866" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a'.</msg>
+<status status="PASS" endtime="20170901 18:27:50.588" starttime="20170901 18:27:48.865"></status>
+</kw>
+<kw name="Click Image" library="Selenium2Library">
+<doc>Clicks an image found by `locator`.</doc>
+<arguments>
+<arg>Logout !!</arg>
+</arguments>
+<msg timestamp="20170901 18:27:50.589" level="INFO">Clicking image 'Logout !!'.</msg>
+<status status="PASS" endtime="20170901 18:27:51.040" starttime="20170901 18:27:50.589"></status>
+</kw>
+<status status="PASS" endtime="20170901 18:27:51.040" starttime="20170901 18:27:48.483"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Sff">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170901 18:27:52.590" starttime="20170901 18:27:51.042"></status>
+</kw>
+<status status="PASS" endtime="20170901 18:27:52.590" starttime="20170901 18:27:51.041"></status>
+</kw>
+<doc>Say somethings</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170901 18:27:52.590" critical="yes" starttime="20170901 18:27:09.315"></status>
+</test>
+<doc>SFF Automate Testing Framework</doc>
+<status status="PASS" endtime="20170901 18:27:52.680" starttime="20170901 18:27:08.269"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Sff" pass="1">Sff</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
