@@ -1,8 +1,6 @@
 *** Settings ***
 Library  Selenium2Library
 
-*** variables ***
-
 *** keywords ***
 Begin Web Test
     open browser  about:blank  chrome

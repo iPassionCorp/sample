@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f152073a-ae54-46c9-ad09-bddd965d3032" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/PO/Login.robot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sff.robot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Common.robot" afterPath="$PROJECT_DIR$/Resources/Common.robot" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/log.html" afterPath="$PROJECT_DIR$/Results/log.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Results/output.xml" afterPath="$PROJECT_DIR$/Results/output.xml" />
@@ -22,8 +23,8 @@
       <file leaf-file-name="Sff.robot" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="19" selection-end-column="90" />
+            <state relative-caret-position="107">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#182#0" expanded="true" />
               </folding>
@@ -31,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.robot" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.robot" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/PO/Login.robot">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -43,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Common.robot" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
+      <file leaf-file-name="Sff.robot" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Resources/Sff.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -63,9 +64,10 @@
       <list>
         <option value="$PROJECT_DIR$/Resource/PO/Login.robot" />
         <option value="$PROJECT_DIR$/Tests/Sff.robot" />
+        <option value="$PROJECT_DIR$/Resources/PO/Login.robot" />
         <option value="$PROJECT_DIR$/Resources/Common.robot" />
         <option value="$PROJECT_DIR$/Tests/SFF/Sff.robot" />
-        <option value="$PROJECT_DIR$/Resources/PO/Login.robot" />
+        <option value="$PROJECT_DIR$/Resources/Sff.robot" />
       </list>
     </option>
   </component>
@@ -250,19 +252,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/Common.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="25" lean-forward="true" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="19" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#182#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -273,6 +265,32 @@
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Selenium2Library/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Resources/Sff.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
