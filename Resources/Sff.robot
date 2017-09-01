@@ -14,3 +14,11 @@ Search Order History
     click element  xpath=//*[@id="ddsubmenu3"]/li[3]/a
     click image  Logout !!
     #close browser
+
+Begin Web Test
+    open browser  about:blank  chrome
+    go to  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
+
+
+End Web Test
+    close browser

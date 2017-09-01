@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation  SFF Automate Testing Framework
-resource  ../../Resources/Common.robot
-resource  ../../Resources/Sff.robot
+Resource  ../../Resources/Sff.robot
 
 Test Setup  Begin Web Test
 Test Teardown  End Web Test
