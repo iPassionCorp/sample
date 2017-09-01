@@ -27,5 +27,6 @@ Test Case1
 
     #Execute by command
     #robot -d results tests/sff.robot
-    #robot -d results --include
+    #option for specific tags --include tagName or -i tagName
     #-d path -> specific result path log.html, output.html, report.html
+    #Option for specific browser -> -v BROWSER:ie like.. pybot -v BROWSER:ie tests/sff.robot

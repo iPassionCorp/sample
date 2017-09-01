@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170901 11:41:27.791" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<robot generated="20170901 12:27:31.970" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
 <suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/sff.robot" id="s1" name="Sff">
 <test id="s1-t1" name="Test Case1">
 <kw name="Open Browser" library="Selenium2Library">
@@ -8,8 +8,8 @@
 <arg>https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20170901 11:41:29.112" level="INFO">Opening browser 'chrome' to base url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
-<status status="PASS" endtime="20170901 11:41:41.069" starttime="20170901 11:41:29.112"></status>
+<msg timestamp="20170901 12:27:33.450" level="INFO">Opening browser 'chrome' to base url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170901 12:27:50.744" starttime="20170901 12:27:33.450"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -17,16 +17,16 @@
 <arg>xpath=//input[@id="frm:username"]</arg>
 <arg>porntipp</arg>
 </arguments>
-<msg timestamp="20170901 11:41:41.071" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
-<status status="PASS" endtime="20170901 11:41:41.944" starttime="20170901 11:41:41.070"></status>
+<msg timestamp="20170901 12:27:50.745" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
+<status status="PASS" endtime="20170901 12:27:51.701" starttime="20170901 12:27:50.745"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3 s</arg>
 </arguments>
-<msg timestamp="20170901 11:41:44.947" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 11:41:44.947" starttime="20170901 11:41:41.944"></status>
+<msg timestamp="20170901 12:27:54.705" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170901 12:27:54.705" starttime="20170901 12:27:51.704"></status>
 </kw>
 <kw name="Input Password" library="Selenium2Library">
 <doc>Types the given password into text field identified by `locator`.</doc>
@@ -34,93 +34,93 @@
 <arg>xpath=//input[@id="frm:password"]</arg>
 <arg>0917#Lek</arg>
 </arguments>
-<msg timestamp="20170901 11:41:44.948" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
-<status status="PASS" endtime="20170901 11:41:45.231" starttime="20170901 11:41:44.948"></status>
+<msg timestamp="20170901 12:27:54.706" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
+<status status="PASS" endtime="20170901 12:27:54.936" starttime="20170901 12:27:54.705"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3 s</arg>
 </arguments>
-<msg timestamp="20170901 11:41:48.233" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 11:41:48.233" starttime="20170901 11:41:45.231"></status>
+<msg timestamp="20170901 12:27:57.938" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170901 12:27:57.939" starttime="20170901 12:27:54.937"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input</arg>
 </arguments>
-<msg timestamp="20170901 11:41:48.234" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
-<status status="PASS" endtime="20170901 11:41:50.793" starttime="20170901 11:41:48.234"></status>
+<msg timestamp="20170901 12:27:57.940" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
+<status status="PASS" endtime="20170901 12:28:00.446" starttime="20170901 12:27:57.939"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3 s</arg>
 </arguments>
-<msg timestamp="20170901 11:41:53.794" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 11:41:53.794" starttime="20170901 11:41:50.793"></status>
+<msg timestamp="20170901 12:28:03.448" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170901 12:28:03.449" starttime="20170901 12:28:00.446"></status>
 </kw>
 <kw name="Mouse Over" library="Selenium2Library">
 <doc>Simulates hovering mouse over the element specified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div</arg>
 </arguments>
-<msg timestamp="20170901 11:41:53.795" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
-<status status="PASS" endtime="20170901 11:41:54.072" starttime="20170901 11:41:53.795"></status>
+<msg timestamp="20170901 12:28:03.450" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
+<status status="PASS" endtime="20170901 12:28:03.614" starttime="20170901 12:28:03.449"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3 s</arg>
 </arguments>
-<msg timestamp="20170901 11:41:57.074" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 11:41:57.075" starttime="20170901 11:41:54.073"></status>
+<msg timestamp="20170901 12:28:06.617" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170901 12:28:06.617" starttime="20170901 12:28:03.614"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@id="ddsubmenu3"]/li[3]/a</arg>
 </arguments>
-<msg timestamp="20170901 11:41:57.076" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a'.</msg>
-<status status="PASS" endtime="20170901 11:41:58.333" starttime="20170901 11:41:57.076"></status>
+<msg timestamp="20170901 12:28:06.619" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a'.</msg>
+<status status="PASS" endtime="20170901 12:28:07.996" starttime="20170901 12:28:06.618"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3 s</arg>
 </arguments>
-<msg timestamp="20170901 11:42:01.335" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 11:42:01.335" starttime="20170901 11:41:58.334"></status>
+<msg timestamp="20170901 12:28:10.999" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170901 12:28:10.999" starttime="20170901 12:28:07.997"></status>
 </kw>
 <kw name="Click Image" library="Selenium2Library">
 <doc>Clicks an image found by `locator`.</doc>
 <arguments>
 <arg>Logout !!</arg>
 </arguments>
-<msg timestamp="20170901 11:42:01.337" level="INFO">Clicking image 'Logout !!'.</msg>
-<status status="PASS" endtime="20170901 11:42:01.651" starttime="20170901 11:42:01.336"></status>
+<msg timestamp="20170901 12:28:11.000" level="INFO">Clicking image 'Logout !!'.</msg>
+<status status="PASS" endtime="20170901 12:28:11.361" starttime="20170901 12:28:10.999"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3 s</arg>
 </arguments>
-<msg timestamp="20170901 11:42:04.654" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 11:42:04.654" starttime="20170901 11:42:01.652"></status>
+<msg timestamp="20170901 12:28:14.362" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170901 12:28:14.363" starttime="20170901 12:28:11.361"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170901 11:42:05.090" starttime="20170901 11:42:04.655"></status>
+<status status="PASS" endtime="20170901 12:28:14.927" starttime="20170901 12:28:14.364"></status>
 </kw>
 <doc>Say somethings</doc>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170901 11:42:05.091" critical="yes" starttime="20170901 11:41:29.111"></status>
+<status status="PASS" endtime="20170901 12:28:14.928" critical="yes" starttime="20170901 12:27:33.448"></status>
 </test>
 <doc>SFF Automate Testing Framework</doc>
-<status status="PASS" endtime="20170901 11:42:05.093" starttime="20170901 11:41:27.825"></status>
+<status status="PASS" endtime="20170901 12:28:14.930" starttime="20170901 12:27:31.995"></status>
 </suite>
 <statistics>
 <total>
