@@ -13,7 +13,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Sff.robot" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
+        <entry file="file://$PROJECT_DIR$/Tests/Sff.robot">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
               <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
@@ -86,12 +86,6 @@
               <item name="SFF-Automate-Testing" type="462c0819:PsiDirectoryNode" />
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SFF-Automate-Testing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SFF-Automate-Testing" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="SFF" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -100,6 +94,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Tests" />
       <recent name="$PROJECT_DIR$/Tests/SFF" />
       <recent name="$PROJECT_DIR$/Resources/Order Management" />
     </key>
@@ -195,7 +190,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Sff.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -213,7 +208,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Sff.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -268,7 +263,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/SFF/Sff.robot">
+    <entry file="file://$PROJECT_DIR$/Tests/Sff.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
