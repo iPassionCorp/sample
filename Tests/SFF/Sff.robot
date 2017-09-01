@@ -31,3 +31,5 @@ Test Case1
     #-d path -> specific result path log.html, output.html, report.html
     #Option for specific browser -> -v BROWSER:ie like.. pybot -v BROWSER:ie tests/sff.robot
     #-v REMOTE_URL:URL for execute remote url for run scripts
+    #-N "Report Name/Logs name/Test Suite's name"
+    #-t "Test Case name"  -t "Test Case name2" .. -t "" ..more test case -> for specific Test Case that want to run
