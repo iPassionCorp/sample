@@ -1,17 +1,29 @@
 *** Settings ***
 Documentation  SFF Automate Testing Framework
-Resource  ../../Resources/Sff.robot
+Resource  ../Resources/Sff.robot
+Resource  ../Resources/Common.robot
 
-Test Setup  Begin Web Test
-Test Teardown  End Web Test
+#Setup and TearDown
+Suite Setup  Common.Insert Testing Data
+Test Setup  Common.Begin Web Test
+Test Teardown  Common.End Web Test
+Suite Teardown  Common.Cleansing Testing Data
 
 *** Test Cases ***
-Test Case1
-    [Documentation]  Say somethings
+Test Authenticaion
+    [Documentation]  Verify Valid SignIn SFF
     [Tags]  Smoke
 
-    Valid Login
-    Search Order History
+    Sff.Valid Login
+    Sff.SigningOut
+
+Test Search Order History
+    [Documentation]  Verify Display Search Order History Page Correctly
+    [Tags]  Smoke
+
+    Sff.Valid Login
+    Sff.Search Order History
+    Sff.SigningOut
 
 
 
