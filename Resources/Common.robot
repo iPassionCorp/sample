@@ -1,12 +1,13 @@
 *** Settings ***
 Library  Selenium2Library
 
-*** Variables ***
+*** variables ***
 
-*** Test Cases ***
+*** keywords ***
 Begin Web Test
     open browser  about:blank  chrome
-    #maximize browser window d
+    go to  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
+
 
 End Web Test
     close browser

@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation  SFF Automate Testing Framework
 Library  Selenium2Library
+resource  ../../Resources/Common.robot
 Test Setup  Begin Web Test
 Test Teardown  End Web Test
 
@@ -12,11 +13,8 @@ Test Case1
     [Documentation]  Say somethings
     [Tags]  Smoke
 
-    #Begin Web Test
-    #open browser  about:blank  chrome
-    #go to  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
-
     #Invalid Login  (Common)
+    sleep  5s
     input text  xpath=//input[@id="frm:username"]  porntipp
     input password  xpath=//input[@id="frm:password"]  0917#Lek
     click button  xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input
@@ -27,13 +25,6 @@ Test Case1
     click image  Logout !!
     #close browser
 
-*** keywords ***
-Begin Web Test
-    open browser  about:blank  chrome
-    go to  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
-
-End Web Test
-    close browser
 
     #Execute by command
     #robot -d results tests/sff.robot
