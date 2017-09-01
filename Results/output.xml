@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170901 13:09:29.276" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests" id="s1" name="Tests">
-<suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/SFF" id="s1-s1" name="SFF">
-<suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/SFF/Sff.robot" id="s1-s1-s1" name="Sff">
-<test id="s1-s1-s1-t1" name="Test Case1">
+<robot generated="20170901 17:07:20.641" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/sff/sff.robot" id="s1" name="Sff">
+<test id="s1-t1" name="Test Case1">
+<kw type="setup" name="Begin Web Test">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf</arg>
+<arg>about:blank</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20170901 13:09:30.628" level="INFO">Opening browser 'chrome' to base url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
-<status status="PASS" endtime="20170901 13:09:48.893" starttime="20170901 13:09:30.627"></status>
+<msg timestamp="20170901 17:07:20.858" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170901 17:07:23.608" starttime="20170901 17:07:20.858"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf</arg>
+</arguments>
+<msg timestamp="20170901 17:07:23.609" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170901 17:07:24.374" starttime="20170901 17:07:23.608"></status>
+</kw>
+<status status="PASS" endtime="20170901 17:07:24.374" starttime="20170901 17:07:20.857"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -19,16 +28,8 @@
 <arg>xpath=//input[@id="frm:username"]</arg>
 <arg>porntipp</arg>
 </arguments>
-<msg timestamp="20170901 13:09:48.900" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
-<status status="PASS" endtime="20170901 13:09:50.003" starttime="20170901 13:09:48.895"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3 s</arg>
-</arguments>
-<msg timestamp="20170901 13:09:53.004" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 13:09:53.005" starttime="20170901 13:09:50.003"></status>
+<msg timestamp="20170901 17:07:24.376" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
+<status status="PASS" endtime="20170901 17:07:24.618" starttime="20170901 17:07:24.375"></status>
 </kw>
 <kw name="Input Password" library="Selenium2Library">
 <doc>Types the given password into text field identified by `locator`.</doc>
@@ -36,110 +37,65 @@
 <arg>xpath=//input[@id="frm:password"]</arg>
 <arg>0917#Lek</arg>
 </arguments>
-<msg timestamp="20170901 13:09:53.006" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
-<status status="PASS" endtime="20170901 13:09:53.259" starttime="20170901 13:09:53.005"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3 s</arg>
-</arguments>
-<msg timestamp="20170901 13:09:56.262" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 13:09:56.262" starttime="20170901 13:09:53.259"></status>
+<msg timestamp="20170901 17:07:24.619" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
+<status status="PASS" endtime="20170901 17:07:24.804" starttime="20170901 17:07:24.618"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input</arg>
 </arguments>
-<msg timestamp="20170901 13:09:56.263" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
-<status status="PASS" endtime="20170901 13:09:58.422" starttime="20170901 13:09:56.262"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3 s</arg>
-</arguments>
-<msg timestamp="20170901 13:10:01.424" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 13:10:01.424" starttime="20170901 13:09:58.422"></status>
+<msg timestamp="20170901 17:07:24.805" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
+<status status="PASS" endtime="20170901 17:07:26.319" starttime="20170901 17:07:24.805"></status>
 </kw>
 <kw name="Mouse Over" library="Selenium2Library">
 <doc>Simulates hovering mouse over the element specified by `locator`.</doc>
 <arguments>
 <arg>xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div</arg>
 </arguments>
-<msg timestamp="20170901 13:10:01.426" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
-<status status="PASS" endtime="20170901 13:10:01.622" starttime="20170901 13:10:01.425"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3 s</arg>
-</arguments>
-<msg timestamp="20170901 13:10:04.624" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 13:10:04.624" starttime="20170901 13:10:01.622"></status>
+<msg timestamp="20170901 17:07:26.320" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
+<status status="PASS" endtime="20170901 17:07:26.425" starttime="20170901 17:07:26.320"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>xpath=//*[@id="ddsubmenu3"]/li[3]/a</arg>
+<arg>xpath=//*[@id="ddsubmenu3"]/li[3]/a/a/a</arg>
 </arguments>
-<msg timestamp="20170901 13:10:04.625" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a'.</msg>
-<status status="PASS" endtime="20170901 13:10:06.137" starttime="20170901 13:10:04.625"></status>
+<msg timestamp="20170901 17:07:26.426" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a/a/a'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170901 17:07:26.998" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170901 17:07:26.999" starttime="20170901 17:07:26.478"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3 s</arg>
-</arguments>
-<msg timestamp="20170901 13:10:09.140" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 13:10:09.141" starttime="20170901 13:10:06.138"></status>
+<msg timestamp="20170901 17:07:27.033" level="FAIL">ValueError: Element locator 'xpath=//*[@id="ddsubmenu3"]/li[3]/a/a/a' did not match any elements.</msg>
+<status status="FAIL" endtime="20170901 17:07:27.034" starttime="20170901 17:07:26.425"></status>
 </kw>
-<kw name="Click Image" library="Selenium2Library">
-<doc>Clicks an image found by `locator`.</doc>
-<arguments>
-<arg>Logout !!</arg>
-</arguments>
-<msg timestamp="20170901 13:10:09.142" level="INFO">Clicking image 'Logout !!'.</msg>
-<status status="PASS" endtime="20170901 13:10:09.464" starttime="20170901 13:10:09.141"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3 s</arg>
-</arguments>
-<msg timestamp="20170901 13:10:12.480" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170901 13:10:12.481" starttime="20170901 13:10:09.465"></status>
-</kw>
+<kw type="teardown" name="End Web Test">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170901 13:10:13.115" starttime="20170901 13:10:12.481"></status>
+<status status="PASS" endtime="20170901 17:07:27.598" starttime="20170901 17:07:27.035"></status>
+</kw>
+<status status="PASS" endtime="20170901 17:07:27.598" starttime="20170901 17:07:27.035"></status>
 </kw>
 <doc>Say somethings</doc>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170901 13:10:13.115" critical="yes" starttime="20170901 13:09:30.626"></status>
+<status status="FAIL" endtime="20170901 17:07:27.598" critical="yes" starttime="20170901 17:07:20.855">ValueError: Element locator 'xpath=//*[@id="ddsubmenu3"]/li[3]/a/a/a' did not match any elements.</status>
 </test>
 <doc>SFF Automate Testing Framework</doc>
-<status status="PASS" endtime="20170901 13:10:13.117" starttime="20170901 13:09:29.405"></status>
-</suite>
-<status status="PASS" endtime="20170901 13:10:13.122" starttime="20170901 13:09:29.401"></status>
-</suite>
-<status status="PASS" endtime="20170901 13:10:13.125" starttime="20170901 13:09:29.291"></status>
+<status status="FAIL" endtime="20170901 17:07:27.600" starttime="20170901 17:07:20.646"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Smoke</stat>
+<stat fail="1" pass="0">Smoke</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
-<stat fail="0" id="s1-s1" name="SFF" pass="1">Tests.SFF</stat>
-<stat fail="0" id="s1-s1-s1" name="Sff" pass="1">Tests.SFF.Sff</stat>
+<stat fail="1" id="s1" name="Sff" pass="0">Sff</stat>
 </suite>
 </statistics>
 <errors>
