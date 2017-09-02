@@ -2,6 +2,7 @@
 Documentation  SFF Automate Testing Framework
 Resource  ../Resources/Sff.robot
 Resource  ../Resources/Common.robot
+Resource  ../Config/Main_config.robot
 
 #Setup and TearDown
 Suite Setup  Common.Insert Testing Data
@@ -10,8 +11,6 @@ Test Teardown  Common.End Web Test
 Suite Teardown  Common.Cleansing Testing Data
 
 *** Variables ***
-${BROWSER} = chrome
-${URL} = https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
 
 
 *** Test Cases ***

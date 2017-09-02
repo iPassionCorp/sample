@@ -1,18 +1,17 @@
 *** Settings ***
-Resource  ./PO/LandingPage.robot
+Resource  ./PO/LandingSignInPage.robot
 Resource  ./PO/SignOut.robot
-Resource  ./PO/OrderHistoryPage.robot
 Resource  ./PO/SignIn.robot
-
+Resource  ./PO/TopNav.robot
 
 *** Keywords ***
 Valid Login
-    LandingPage.load
-    LandingPage.Verify Page Loaded
+    LandingSignInPage.load
+    LandingSignInPage.Verify Page Loaded
     SignIn.Valid SignIn
 
 Search Order History
-    OrderHistoryPage.To Search Order History Page
+    TopNav.Select Order History Page
 
 SigningOut
     SignOut.SignOut
