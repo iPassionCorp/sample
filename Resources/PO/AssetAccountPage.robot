@@ -34,4 +34,4 @@ Select Order Type List
     select from list  //*[@id="frmOrderType:idSelectOneOrderType"]  ${OrderType}
 
 Click Go Button
-    click button
+    click button  ${BTN_ORDER_GO_BUTTON}

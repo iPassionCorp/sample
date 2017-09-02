@@ -12,7 +12,7 @@ ${AccountNo} =  31300004020900
 #Button
 ${LOGIN_SUBMIT_BUTTON} =  xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input
 ${SEARCH_ACCOUNT_BUTTON} =  //*[@id="frmSearch:j_id_id45"]
-${BTN_ORDER_GO_BUTTON} =
+${BTN_ORDER_GO_BUTTON} =  //*[@id="frmOrderType:j_id_id105"]/img
 
 #Input Text
 ${INPUT_ASSET_ACC_ACCOUNT_NO} =  //*[@id="frmSearch:AccountNo"]
