@@ -26,8 +26,22 @@ Test Search Order History
     [Tags]  Smoke
 
     Sff.Valid Login
-    Sff.Search Order History
+    Sff.Go to Order History Page
     Sff.SigningOut
+
+Order New Registration
+    [Documentation]  Order New Registration
+    [Tags]  NewRegis
+    Sff.Valid Login
+    Sff.Go to Asset Account Management
+    Sff.Specifig Account by Account No  ${AccountNo}
+    Sff.Click Search Button
+    sleep  3s
+    Sff.Select First Account List
+    sleep  3s
+    Sff.Select Order Type List  New Registration
+    sleep  5s
+    #Sff.Click Go Button
 
 
 

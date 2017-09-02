@@ -13,3 +13,4 @@ ${RISK_MANAGEMENT_LINK} =
 
 #Sub Menu
 ${ORDER_HISTORY_LINK} =  xpath=//*[@id="ddsubmenu3"]/li[3]/a
+${ASSET_ACCOUNT_LINK} =  //*[@id="ddsubmenu3"]/li[2]/a

@@ -13,12 +13,12 @@ Invalid SignIn
     Submit Button
 
 Enter Username
-    input text  xpath=//input[@id="frm:username"]  porntipp
+    input text  xpath=//input[@id="frm:username"]  ${SFF_USER}
 
 Enter Password
-    input password  xpath=//input[@id="frm:password"]  0917#Lek
+    input password  xpath=//input[@id="frm:password"]  ${SFF_PASSWORD}
 
 Submit Button
-    click button  xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input
+    click button  ${LOGIN_SUBMIT_BUTTON}
 
 
