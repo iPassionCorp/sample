@@ -39,3 +39,4 @@ Select Order Type List
     AssetAccountPage.Select Order Type List  ${OrderType}
 
 Click Go Button
+    AssetAccountPage.Click Go Button

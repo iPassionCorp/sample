@@ -1,5 +1,6 @@
 *** Settings ***
 Library  Selenium2Library
+Resource  ../../Config/Main_config.robot
 
 *** Keywords ***
 Load

@@ -1,5 +1,6 @@
 *** Settings ***
 Library  Selenium2Library
+Resource  ../../Config/Main_config.robot
 
 *** Keywords ***
 Go To Asset Account Page
@@ -20,7 +21,7 @@ Click Order History Link
 
 Enter Account NO
     [Arguments]  ${AccountNo}
-    input text  ${ASSET_ACC_ACCOUNT_NO}  ${AccountNo}
+    input text  ${INPUT_ASSET_ACC_ACCOUNT_NO}  ${AccountNo}
 
 Click Search Account
     click button  ${SEARCH_ACCOUNT_BUTTON}
@@ -31,3 +32,6 @@ Select First Account List
 Select Order Type List
     [Arguments]  ${OrderType}
     select from list  //*[@id="frmOrderType:idSelectOneOrderType"]  ${OrderType}
+
+Click Go Button
+    click button

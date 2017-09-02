@@ -1,7 +1,6 @@
 *** Settings ***
-#Resource  ./SubPO/OrderHistoryPage.robot
-#Resource  ./SubPO/AssetAccountPage.robot
-
+Resource  AssetAccountPage.robot
+Resource  OrderHistoryPage.robot
 
 *** Keywords ***
 Go to Order History Page
