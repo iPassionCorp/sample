@@ -4,7 +4,7 @@ Library  Selenium2Library
 
 *** Keywords ***
 Begin Web Test
-    open browser  about:blank  chrome
+    open browser  about:blank  ${BROWSER}
 
 
 End Web Test

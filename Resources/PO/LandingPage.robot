@@ -3,7 +3,7 @@ Library  Selenium2Library
 
 *** Keywords ***
 Load
-    go to  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
+    go to  ${URL}
 
 Verify Page Loaded
     wait until page contains  Username:

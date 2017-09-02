@@ -1,8 +1,8 @@
 *** Settings ***
-Resource  PO/LandingPage.robot
-Resource  PO/SignOut.robot
-Resource  PO/OrderHistoryPage.robot
-Resource  PO/SignIn.robot
+Resource  ./PO/LandingPage.robot
+Resource  ./PO/SignOut.robot
+Resource  ./PO/OrderHistoryPage.robot
+Resource  ./PO/SignIn.robot
 
 
 *** Keywords ***

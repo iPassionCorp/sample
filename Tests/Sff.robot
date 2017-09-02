@@ -9,6 +9,11 @@ Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 Suite Teardown  Common.Cleansing Testing Data
 
+*** Variables ***
+${BROWSER} = chrome
+${URL} = https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
+
+
 *** Test Cases ***
 Test Authenticaion
     [Documentation]  Verify Valid SignIn SFF
