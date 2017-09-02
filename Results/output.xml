@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170902 23:41:33.546" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<robot generated="20170903 00:44:39.023" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
 <suite source="/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/sff.robot" id="s1" name="Sff">
 <kw type="setup" name="Insert Testing Data" library="Common">
 <kw name="Log" library="BuiltIn">
@@ -7,10 +7,10 @@
 <arguments>
 <arg>Insert Testing Data..</arg>
 </arguments>
-<msg timestamp="20170902 23:41:35.077" level="INFO">Insert Testing Data..</msg>
-<status status="PASS" endtime="20170902 23:41:35.077" starttime="20170902 23:41:35.076"></status>
+<msg timestamp="20170903 00:44:39.299" level="INFO">Insert Testing Data..</msg>
+<status status="PASS" endtime="20170903 00:44:39.299" starttime="20170903 00:44:39.299"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:41:35.077" starttime="20170902 23:41:35.074"></status>
+<status status="PASS" endtime="20170903 00:44:39.300" starttime="20170903 00:44:39.298"></status>
 </kw>
 <test id="s1-t1" name="Test Authenticaion">
 <kw type="setup" name="Begin Web Test" library="Common">
@@ -20,10 +20,10 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20170902 23:41:35.080" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
-<status status="PASS" endtime="20170902 23:42:17.830" starttime="20170902 23:41:35.080"></status>
+<msg timestamp="20170903 00:44:39.304" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170903 00:44:41.019" starttime="20170903 00:44:39.304"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:17.831" starttime="20170902 23:41:35.079"></status>
+<status status="PASS" endtime="20170903 00:44:41.019" starttime="20170903 00:44:39.303"></status>
 </kw>
 <kw name="Valid Login" library="Sff">
 <kw name="Load" library="LandingSignInPage">
@@ -32,10 +32,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:17.834" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
-<status status="PASS" endtime="20170902 23:42:25.040" starttime="20170902 23:42:17.833"></status>
+<msg timestamp="20170903 00:44:41.023" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170903 00:44:41.677" starttime="20170903 00:44:41.022"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:25.040" starttime="20170902 23:42:17.832"></status>
+<status status="PASS" endtime="20170903 00:44:41.678" starttime="20170903 00:44:41.021"></status>
 </kw>
 <kw name="Verify Page Loaded" library="LandingSignInPage">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
@@ -43,9 +43,9 @@
 <arguments>
 <arg>Username:</arg>
 </arguments>
-<status status="PASS" endtime="20170902 23:42:25.391" starttime="20170902 23:42:25.041"></status>
+<status status="PASS" endtime="20170903 00:44:41.729" starttime="20170903 00:44:41.679"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:25.391" starttime="20170902 23:42:25.041"></status>
+<status status="PASS" endtime="20170903 00:44:41.730" starttime="20170903 00:44:41.678"></status>
 </kw>
 <kw name="Valid SignIn" library="SignIn">
 <kw name="Enter Username" library="SignIn">
@@ -55,10 +55,10 @@
 <arg>xpath=//input[@id="frm:username"]</arg>
 <arg>${SFF_USER}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:25.395" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
-<status status="PASS" endtime="20170902 23:42:26.434" starttime="20170902 23:42:25.395"></status>
+<msg timestamp="20170903 00:44:41.732" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
+<status status="PASS" endtime="20170903 00:44:41.940" starttime="20170903 00:44:41.731"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:26.434" starttime="20170902 23:42:25.394"></status>
+<status status="PASS" endtime="20170903 00:44:41.941" starttime="20170903 00:44:41.731"></status>
 </kw>
 <kw name="Enter Password" library="SignIn">
 <kw name="Input Password" library="Selenium2Library">
@@ -67,10 +67,10 @@
 <arg>xpath=//input[@id="frm:password"]</arg>
 <arg>${SFF_PASSWORD}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:26.438" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
-<status status="PASS" endtime="20170902 23:42:26.680" starttime="20170902 23:42:26.436"></status>
+<msg timestamp="20170903 00:44:41.942" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
+<status status="PASS" endtime="20170903 00:44:42.130" starttime="20170903 00:44:41.942"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:26.680" starttime="20170902 23:42:26.435"></status>
+<status status="PASS" endtime="20170903 00:44:42.130" starttime="20170903 00:44:41.941"></status>
 </kw>
 <kw name="Submit Button" library="SignIn">
 <kw name="Click Button" library="Selenium2Library">
@@ -78,14 +78,14 @@
 <arguments>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:26.681" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
-<status status="PASS" endtime="20170902 23:42:30.152" starttime="20170902 23:42:26.681"></status>
+<msg timestamp="20170903 00:44:42.132" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
+<status status="PASS" endtime="20170903 00:44:43.641" starttime="20170903 00:44:42.132"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:30.152" starttime="20170902 23:42:26.680"></status>
+<status status="PASS" endtime="20170903 00:44:43.642" starttime="20170903 00:44:42.131"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:30.152" starttime="20170902 23:42:25.393"></status>
+<status status="PASS" endtime="20170903 00:44:43.642" starttime="20170903 00:44:41.730"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:30.153" starttime="20170902 23:42:17.832"></status>
+<status status="PASS" endtime="20170903 00:44:43.642" starttime="20170903 00:44:41.020"></status>
 </kw>
 <kw name="SigningOut" library="Sff">
 <kw name="SignOut" library="SignOut">
@@ -95,27 +95,27 @@
 <arguments>
 <arg>Logout !!</arg>
 </arguments>
-<msg timestamp="20170902 23:42:30.156" level="INFO">Clicking image 'Logout !!'.</msg>
-<status status="PASS" endtime="20170902 23:42:31.169" starttime="20170902 23:42:30.156"></status>
+<msg timestamp="20170903 00:44:43.645" level="INFO">Clicking image 'Logout !!'.</msg>
+<status status="PASS" endtime="20170903 00:44:44.127" starttime="20170903 00:44:43.645"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:31.169" starttime="20170902 23:42:30.155"></status>
+<status status="PASS" endtime="20170903 00:44:44.127" starttime="20170903 00:44:43.644"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:31.170" starttime="20170902 23:42:30.155"></status>
+<status status="PASS" endtime="20170903 00:44:44.127" starttime="20170903 00:44:43.644"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:31.171" starttime="20170902 23:42:30.154"></status>
+<status status="PASS" endtime="20170903 00:44:44.128" starttime="20170903 00:44:43.643"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170902 23:42:32.174" starttime="20170902 23:42:31.173"></status>
+<status status="PASS" endtime="20170903 00:44:44.495" starttime="20170903 00:44:44.130"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:32.174" starttime="20170902 23:42:31.172"></status>
+<status status="PASS" endtime="20170903 00:44:44.496" starttime="20170903 00:44:44.129"></status>
 </kw>
 <doc>Verify Valid SignIn SFF</doc>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170902 23:42:32.174" critical="yes" starttime="20170902 23:41:35.077"></status>
+<status status="PASS" endtime="20170903 00:44:44.496" critical="yes" starttime="20170903 00:44:39.300"></status>
 </test>
 <test id="s1-t2" name="Test Search Order History">
 <kw type="setup" name="Begin Web Test" library="Common">
@@ -125,10 +125,10 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:32.233" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
-<status status="PASS" endtime="20170902 23:42:36.250" starttime="20170902 23:42:32.233"></status>
+<msg timestamp="20170903 00:44:44.501" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170903 00:44:47.055" starttime="20170903 00:44:44.500"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:36.250" starttime="20170902 23:42:32.232"></status>
+<status status="PASS" endtime="20170903 00:44:47.056" starttime="20170903 00:44:44.499"></status>
 </kw>
 <kw name="Valid Login" library="Sff">
 <kw name="Load" library="LandingSignInPage">
@@ -137,10 +137,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:36.254" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
-<status status="PASS" endtime="20170902 23:42:37.196" starttime="20170902 23:42:36.253"></status>
+<msg timestamp="20170903 00:44:47.059" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170903 00:44:47.839" starttime="20170903 00:44:47.058"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:37.196" starttime="20170902 23:42:36.252"></status>
+<status status="PASS" endtime="20170903 00:44:47.839" starttime="20170903 00:44:47.058"></status>
 </kw>
 <kw name="Verify Page Loaded" library="LandingSignInPage">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
@@ -148,9 +148,9 @@
 <arguments>
 <arg>Username:</arg>
 </arguments>
-<status status="PASS" endtime="20170902 23:42:37.245" starttime="20170902 23:42:37.198"></status>
+<status status="PASS" endtime="20170903 00:44:47.890" starttime="20170903 00:44:47.841"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:37.245" starttime="20170902 23:42:37.197"></status>
+<status status="PASS" endtime="20170903 00:44:47.891" starttime="20170903 00:44:47.840"></status>
 </kw>
 <kw name="Valid SignIn" library="SignIn">
 <kw name="Enter Username" library="SignIn">
@@ -160,10 +160,10 @@
 <arg>xpath=//input[@id="frm:username"]</arg>
 <arg>${SFF_USER}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:37.248" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
-<status status="PASS" endtime="20170902 23:42:37.518" starttime="20170902 23:42:37.247"></status>
+<msg timestamp="20170903 00:44:47.893" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
+<status status="PASS" endtime="20170903 00:44:48.103" starttime="20170903 00:44:47.893"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:37.518" starttime="20170902 23:42:37.246"></status>
+<status status="PASS" endtime="20170903 00:44:48.103" starttime="20170903 00:44:47.892"></status>
 </kw>
 <kw name="Enter Password" library="SignIn">
 <kw name="Input Password" library="Selenium2Library">
@@ -172,10 +172,10 @@
 <arg>xpath=//input[@id="frm:password"]</arg>
 <arg>${SFF_PASSWORD}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:37.521" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
-<status status="PASS" endtime="20170902 23:42:37.747" starttime="20170902 23:42:37.520"></status>
+<msg timestamp="20170903 00:44:48.105" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
+<status status="PASS" endtime="20170903 00:44:48.875" starttime="20170903 00:44:48.104"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:37.749" starttime="20170902 23:42:37.519"></status>
+<status status="PASS" endtime="20170903 00:44:48.876" starttime="20170903 00:44:48.104"></status>
 </kw>
 <kw name="Submit Button" library="SignIn">
 <kw name="Click Button" library="Selenium2Library">
@@ -183,14 +183,14 @@
 <arguments>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:37.751" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
-<status status="PASS" endtime="20170902 23:42:39.449" starttime="20170902 23:42:37.750"></status>
+<msg timestamp="20170903 00:44:48.877" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
+<status status="PASS" endtime="20170903 00:44:50.696" starttime="20170903 00:44:48.877"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:39.449" starttime="20170902 23:42:37.749"></status>
+<status status="PASS" endtime="20170903 00:44:50.696" starttime="20170903 00:44:48.876"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:39.449" starttime="20170902 23:42:37.246"></status>
+<status status="PASS" endtime="20170903 00:44:50.696" starttime="20170903 00:44:47.891"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:39.449" starttime="20170902 23:42:36.251"></status>
+<status status="PASS" endtime="20170903 00:44:50.696" starttime="20170903 00:44:47.057"></status>
 </kw>
 <kw name="Go to Order History Page" library="Sff">
 <kw name="Go to Order History Page" library="TopNav">
@@ -201,10 +201,10 @@
 <arguments>
 <arg>${ORDER_MANAGEMENT_LINK}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:39.454" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
-<status status="PASS" endtime="20170902 23:42:39.759" starttime="20170902 23:42:39.453"></status>
+<msg timestamp="20170903 00:44:50.701" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
+<status status="PASS" endtime="20170903 00:44:50.808" starttime="20170903 00:44:50.701"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:39.759" starttime="20170902 23:42:39.453"></status>
+<status status="PASS" endtime="20170903 00:44:50.808" starttime="20170903 00:44:50.699"></status>
 </kw>
 <kw name="Verify Page Link" library="OrderHistoryPage">
 <kw name="Get Text" library="Selenium2Library">
@@ -215,8 +215,8 @@
 <assign>
 <var>${getElementText}</var>
 </assign>
-<msg timestamp="20170902 23:42:39.945" level="INFO">${getElementText} = Search Order / Transaction History</msg>
-<status status="PASS" endtime="20170902 23:42:39.945" starttime="20170902 23:42:39.761"></status>
+<msg timestamp="20170903 00:44:50.902" level="INFO">${getElementText} = Search Order / Transaction History</msg>
+<status status="PASS" endtime="20170903 00:44:50.903" starttime="20170903 00:44:50.810"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -225,9 +225,9 @@
 <arg>Search Order / Transaction History</arg>
 <arg>ignore_case=true</arg>
 </arguments>
-<status status="PASS" endtime="20170902 23:42:39.947" starttime="20170902 23:42:39.946"></status>
+<status status="PASS" endtime="20170903 00:44:50.904" starttime="20170903 00:44:50.903"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:39.948" starttime="20170902 23:42:39.760"></status>
+<status status="PASS" endtime="20170903 00:44:50.905" starttime="20170903 00:44:50.809"></status>
 </kw>
 <kw name="Click Order History Link" library="OrderHistoryPage">
 <kw name="Click Element" library="Selenium2Library">
@@ -235,16 +235,16 @@
 <arguments>
 <arg>${ORDER_HISTORY_LINK}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:39.950" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a'.</msg>
-<status status="PASS" endtime="20170902 23:42:42.018" starttime="20170902 23:42:39.949"></status>
+<msg timestamp="20170903 00:44:50.906" level="INFO">Clicking element 'xpath=//*[@id="ddsubmenu3"]/li[3]/a'.</msg>
+<status status="PASS" endtime="20170903 00:44:51.898" starttime="20170903 00:44:50.906"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.019" starttime="20170902 23:42:39.949"></status>
+<status status="PASS" endtime="20170903 00:44:51.899" starttime="20170903 00:44:50.905"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.019" starttime="20170902 23:42:39.451"></status>
+<status status="PASS" endtime="20170903 00:44:51.899" starttime="20170903 00:44:50.699"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.019" starttime="20170902 23:42:39.451"></status>
+<status status="PASS" endtime="20170903 00:44:51.899" starttime="20170903 00:44:50.698"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.020" starttime="20170902 23:42:39.450"></status>
+<status status="PASS" endtime="20170903 00:44:51.900" starttime="20170903 00:44:50.697"></status>
 </kw>
 <kw name="SigningOut" library="Sff">
 <kw name="SignOut" library="SignOut">
@@ -254,27 +254,27 @@
 <arguments>
 <arg>Logout !!</arg>
 </arguments>
-<msg timestamp="20170902 23:42:42.023" level="INFO">Clicking image 'Logout !!'.</msg>
-<status status="PASS" endtime="20170902 23:42:42.625" starttime="20170902 23:42:42.023"></status>
+<msg timestamp="20170903 00:44:51.903" level="INFO">Clicking image 'Logout !!'.</msg>
+<status status="PASS" endtime="20170903 00:44:52.239" starttime="20170903 00:44:51.903"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.626" starttime="20170902 23:42:42.022"></status>
+<status status="PASS" endtime="20170903 00:44:52.239" starttime="20170903 00:44:51.902"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.626" starttime="20170902 23:42:42.021"></status>
+<status status="PASS" endtime="20170903 00:44:52.239" starttime="20170903 00:44:51.901"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:42.627" starttime="20170902 23:42:42.020"></status>
+<status status="PASS" endtime="20170903 00:44:52.240" starttime="20170903 00:44:51.900"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170902 23:42:43.749" starttime="20170902 23:42:42.629"></status>
+<status status="PASS" endtime="20170903 00:44:52.727" starttime="20170903 00:44:52.242"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:43.750" starttime="20170902 23:42:42.628"></status>
+<status status="PASS" endtime="20170903 00:44:52.728" starttime="20170903 00:44:52.241"></status>
 </kw>
 <doc>Verify Display Search Order History Page Correctly</doc>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170902 23:42:43.750" critical="yes" starttime="20170902 23:42:32.230"></status>
+<status status="PASS" endtime="20170903 00:44:52.728" critical="yes" starttime="20170903 00:44:44.498"></status>
 </test>
 <test id="s1-t3" name="Order New Registration">
 <kw type="setup" name="Begin Web Test" library="Common">
@@ -284,10 +284,10 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:43.755" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
-<status status="PASS" endtime="20170902 23:42:47.385" starttime="20170902 23:42:43.754"></status>
+<msg timestamp="20170903 00:44:52.733" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170903 00:44:55.327" starttime="20170903 00:44:52.732"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:47.385" starttime="20170902 23:42:43.753"></status>
+<status status="PASS" endtime="20170903 00:44:55.327" starttime="20170903 00:44:52.731"></status>
 </kw>
 <kw name="Valid Login" library="Sff">
 <kw name="Load" library="LandingSignInPage">
@@ -296,10 +296,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:47.389" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
-<status status="PASS" endtime="20170902 23:42:48.378" starttime="20170902 23:42:47.388"></status>
+<msg timestamp="20170903 00:44:55.331" level="INFO">Opening url 'https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf'</msg>
+<status status="PASS" endtime="20170903 00:44:55.989" starttime="20170903 00:44:55.330"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:48.378" starttime="20170902 23:42:47.387"></status>
+<status status="PASS" endtime="20170903 00:44:55.989" starttime="20170903 00:44:55.329"></status>
 </kw>
 <kw name="Verify Page Loaded" library="LandingSignInPage">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
@@ -307,9 +307,9 @@
 <arguments>
 <arg>Username:</arg>
 </arguments>
-<status status="PASS" endtime="20170902 23:42:48.435" starttime="20170902 23:42:48.379"></status>
+<status status="PASS" endtime="20170903 00:44:56.034" starttime="20170903 00:44:55.990"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:48.435" starttime="20170902 23:42:48.378"></status>
+<status status="PASS" endtime="20170903 00:44:56.034" starttime="20170903 00:44:55.990"></status>
 </kw>
 <kw name="Valid SignIn" library="SignIn">
 <kw name="Enter Username" library="SignIn">
@@ -319,10 +319,10 @@
 <arg>xpath=//input[@id="frm:username"]</arg>
 <arg>${SFF_USER}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:48.438" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
-<status status="PASS" endtime="20170902 23:42:48.649" starttime="20170902 23:42:48.437"></status>
+<msg timestamp="20170903 00:44:56.036" level="INFO">Typing text 'porntipp' into text field 'xpath=//input[@id="frm:username"]'</msg>
+<status status="PASS" endtime="20170903 00:44:56.244" starttime="20170903 00:44:56.036"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:48.649" starttime="20170902 23:42:48.436"></status>
+<status status="PASS" endtime="20170903 00:44:56.245" starttime="20170903 00:44:56.035"></status>
 </kw>
 <kw name="Enter Password" library="SignIn">
 <kw name="Input Password" library="Selenium2Library">
@@ -331,10 +331,10 @@
 <arg>xpath=//input[@id="frm:password"]</arg>
 <arg>${SFF_PASSWORD}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:48.650" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
-<status status="PASS" endtime="20170902 23:42:48.908" starttime="20170902 23:42:48.650"></status>
+<msg timestamp="20170903 00:44:56.247" level="INFO">Typing password into text field 'xpath=//input[@id="frm:password"]'</msg>
+<status status="PASS" endtime="20170903 00:44:56.425" starttime="20170903 00:44:56.246"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:48.908" starttime="20170902 23:42:48.649"></status>
+<status status="PASS" endtime="20170903 00:44:56.425" starttime="20170903 00:44:56.245"></status>
 </kw>
 <kw name="Submit Button" library="SignIn">
 <kw name="Click Button" library="Selenium2Library">
@@ -342,14 +342,14 @@
 <arguments>
 <arg>${LOGIN_SUBMIT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:48.910" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
-<status status="PASS" endtime="20170902 23:42:50.830" starttime="20170902 23:42:48.909"></status>
+<msg timestamp="20170903 00:44:56.427" level="INFO">Clicking button 'xpath=//*[@id="frm"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.</msg>
+<status status="PASS" endtime="20170903 00:44:58.053" starttime="20170903 00:44:56.426"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:50.830" starttime="20170902 23:42:48.909"></status>
+<status status="PASS" endtime="20170903 00:44:58.053" starttime="20170903 00:44:56.425"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:50.830" starttime="20170902 23:42:48.436"></status>
+<status status="PASS" endtime="20170903 00:44:58.054" starttime="20170903 00:44:56.035"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:50.831" starttime="20170902 23:42:47.386"></status>
+<status status="PASS" endtime="20170903 00:44:58.054" starttime="20170903 00:44:55.328"></status>
 </kw>
 <kw name="Go to Asset Account Management" library="Sff">
 <kw name="Go to Asset Account Page" library="TopNav">
@@ -360,10 +360,10 @@
 <arguments>
 <arg>${ORDER_MANAGEMENT_LINK}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:50.835" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
-<status status="PASS" endtime="20170902 23:42:51.122" starttime="20170902 23:42:50.834"></status>
+<msg timestamp="20170903 00:44:58.059" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="ddtopmenubar"]/ul/li[3]/a/div'</msg>
+<status status="PASS" endtime="20170903 00:44:58.163" starttime="20170903 00:44:58.058"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:51.123" starttime="20170902 23:42:50.833"></status>
+<status status="PASS" endtime="20170903 00:44:58.164" starttime="20170903 00:44:58.057"></status>
 </kw>
 <kw name="Verify Page Link" library="AssetAccountPage">
 <kw name="Get Text" library="Selenium2Library">
@@ -374,8 +374,8 @@
 <assign>
 <var>${getElementText}</var>
 </assign>
-<msg timestamp="20170902 23:42:51.230" level="INFO">${getElementText} = Account Asset Information</msg>
-<status status="PASS" endtime="20170902 23:42:51.231" starttime="20170902 23:42:51.124"></status>
+<msg timestamp="20170903 00:44:58.255" level="INFO">${getElementText} = Account Asset Information</msg>
+<status status="PASS" endtime="20170903 00:44:58.255" starttime="20170903 00:44:58.165"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -384,9 +384,9 @@
 <arg>Account Asset Information</arg>
 <arg>ignore_case=true</arg>
 </arguments>
-<status status="PASS" endtime="20170902 23:42:51.232" starttime="20170902 23:42:51.231"></status>
+<status status="PASS" endtime="20170903 00:44:58.256" starttime="20170903 00:44:58.256"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:51.232" starttime="20170902 23:42:51.123"></status>
+<status status="PASS" endtime="20170903 00:44:58.257" starttime="20170903 00:44:58.164"></status>
 </kw>
 <kw name="Click Order History Link" library="AssetAccountPage">
 <kw name="Click Element" library="Selenium2Library">
@@ -394,16 +394,16 @@
 <arguments>
 <arg>${ASSET_ACCOUNT_LINK}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:51.235" level="INFO">Clicking element '//*[@id="ddsubmenu3"]/li[2]/a'.</msg>
-<status status="PASS" endtime="20170902 23:42:52.349" starttime="20170902 23:42:51.234"></status>
+<msg timestamp="20170903 00:44:58.258" level="INFO">Clicking element '//*[@id="ddsubmenu3"]/li[2]/a'.</msg>
+<status status="PASS" endtime="20170903 00:44:59.456" starttime="20170903 00:44:58.258"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:52.350" starttime="20170902 23:42:51.233"></status>
+<status status="PASS" endtime="20170903 00:44:59.456" starttime="20170903 00:44:58.257"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:52.350" starttime="20170902 23:42:50.833"></status>
+<status status="PASS" endtime="20170903 00:44:59.457" starttime="20170903 00:44:58.056"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:52.350" starttime="20170902 23:42:50.832"></status>
+<status status="PASS" endtime="20170903 00:44:59.457" starttime="20170903 00:44:58.056"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:52.350" starttime="20170902 23:42:50.831"></status>
+<status status="PASS" endtime="20170903 00:44:59.457" starttime="20170903 00:44:58.054"></status>
 </kw>
 <kw name="Specifig Account by Account No" library="Sff">
 <arguments>
@@ -419,12 +419,12 @@
 <arg>${INPUT_ASSET_ACC_ACCOUNT_NO}</arg>
 <arg>${AccountNo}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:52.353" level="INFO">Typing text '31300004020900' into text field '//*[@id="frmSearch:AccountNo"]'</msg>
-<status status="PASS" endtime="20170902 23:42:52.910" starttime="20170902 23:42:52.353"></status>
+<msg timestamp="20170903 00:44:59.461" level="INFO">Typing text '31300004020900' into text field '//*[@id="frmSearch:AccountNo"]'</msg>
+<status status="PASS" endtime="20170903 00:44:59.837" starttime="20170903 00:44:59.460"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:52.911" starttime="20170902 23:42:52.352"></status>
+<status status="PASS" endtime="20170903 00:44:59.837" starttime="20170903 00:44:59.459"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:52.911" starttime="20170902 23:42:52.351"></status>
+<status status="PASS" endtime="20170903 00:44:59.837" starttime="20170903 00:44:59.458"></status>
 </kw>
 <kw name="Click Search Button" library="Sff">
 <kw name="Click Search Account" library="AssetAccountPage">
@@ -433,20 +433,20 @@
 <arguments>
 <arg>${SEARCH_ACCOUNT_BUTTON}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:52.913" level="INFO">Clicking button '//*[@id="frmSearch:j_id_id45"]'.</msg>
-<status status="PASS" endtime="20170902 23:42:53.149" starttime="20170902 23:42:52.913"></status>
+<msg timestamp="20170903 00:44:59.840" level="INFO">Clicking button '//*[@id="frmSearch:j_id_id45"]'.</msg>
+<status status="PASS" endtime="20170903 00:45:00.019" starttime="20170903 00:44:59.839"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:53.149" starttime="20170902 23:42:52.912"></status>
+<status status="PASS" endtime="20170903 00:45:00.020" starttime="20170903 00:44:59.839"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:53.150" starttime="20170902 23:42:52.911"></status>
+<status status="PASS" endtime="20170903 00:45:00.020" starttime="20170903 00:44:59.838"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20170902 23:42:56.163" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170902 23:42:56.163" starttime="20170902 23:42:53.150"></status>
+<msg timestamp="20170903 00:45:03.022" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170903 00:45:03.023" starttime="20170903 00:45:00.020"></status>
 </kw>
 <kw name="Select First Account List" library="Sff">
 <kw name="Select First Account List" library="AssetAccountPage">
@@ -455,26 +455,26 @@
 <arguments>
 <arg>${FIRST_ACCOUNT_LIST}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:56.166" level="INFO">Clicking link '//a[@id="frmlist:acclist:0:j_id_id58"]'.</msg>
-<status status="PASS" endtime="20170902 23:42:56.427" starttime="20170902 23:42:56.166"></status>
+<msg timestamp="20170903 00:45:03.027" level="INFO">Clicking link '//a[@id="frmlist:acclist:0:j_id_id58"]'.</msg>
+<status status="PASS" endtime="20170903 00:45:03.211" starttime="20170903 00:45:03.026"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:56.427" starttime="20170902 23:42:56.165"></status>
+<status status="PASS" endtime="20170903 00:45:03.211" starttime="20170903 00:45:03.025"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:56.427" starttime="20170902 23:42:56.164"></status>
+<status status="PASS" endtime="20170903 00:45:03.211" starttime="20170903 00:45:03.024"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20170902 23:42:59.430" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20170902 23:42:59.430" starttime="20170902 23:42:56.428"></status>
+<msg timestamp="20170903 00:45:06.213" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20170903 00:45:06.214" starttime="20170903 00:45:03.212"></status>
 </kw>
 <kw name="Select Order Type List" library="Sff">
 <arguments>
 <arg>New Registration</arg>
 </arguments>
-<kw name="Select Order Type List" library="AssetAccountPage">
+<kw name="Select Order Type List" library="OrderManagementPage">
 <arguments>
 <arg>${OrderType}</arg>
 </arguments>
@@ -484,33 +484,33 @@
 <arg>//*[@id="frmOrderType:idSelectOneOrderType"]</arg>
 <arg>${OrderType}</arg>
 </arguments>
-<msg timestamp="20170902 23:42:59.434" level="INFO">Selecting option(s) 'New Registration' from list '//*[@id="frmOrderType:idSelectOneOrderType"]'.</msg>
-<status status="PASS" endtime="20170902 23:42:59.735" starttime="20170902 23:42:59.433"></status>
+<msg timestamp="20170903 00:45:06.218" level="INFO">Selecting option(s) 'New Registration' from list '//*[@id="frmOrderType:idSelectOneOrderType"]'.</msg>
+<status status="PASS" endtime="20170903 00:45:06.471" starttime="20170903 00:45:06.217"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:59.735" starttime="20170902 23:42:59.432"></status>
+<status status="PASS" endtime="20170903 00:45:06.471" starttime="20170903 00:45:06.216"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:42:59.736" starttime="20170902 23:42:59.431"></status>
+<status status="PASS" endtime="20170903 00:45:06.471" starttime="20170903 00:45:06.215"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>5s</arg>
 </arguments>
-<msg timestamp="20170902 23:43:04.738" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" endtime="20170902 23:43:04.738" starttime="20170902 23:42:59.736"></status>
+<msg timestamp="20170903 00:45:11.473" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20170903 00:45:11.474" starttime="20170903 00:45:06.472"></status>
 </kw>
 <kw type="teardown" name="End Web Test" library="Common">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170902 23:43:05.068" starttime="20170902 23:43:04.740"></status>
+<status status="PASS" endtime="20170903 00:45:11.932" starttime="20170903 00:45:11.475"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:43:05.068" starttime="20170902 23:43:04.739"></status>
+<status status="PASS" endtime="20170903 00:45:11.933" starttime="20170903 00:45:11.474"></status>
 </kw>
 <doc>Order New Registration</doc>
 <tags>
 <tag>NewRegis</tag>
 </tags>
-<status status="PASS" endtime="20170902 23:43:05.068" critical="yes" starttime="20170902 23:42:43.751"></status>
+<status status="PASS" endtime="20170903 00:45:11.933" critical="yes" starttime="20170903 00:44:52.730"></status>
 </test>
 <kw type="teardown" name="Cleansing Testing Data" library="Common">
 <kw name="Log" library="BuiltIn">
@@ -518,13 +518,13 @@
 <arguments>
 <arg>Cleansing Testing Data..</arg>
 </arguments>
-<msg timestamp="20170902 23:43:05.073" level="INFO">Cleansing Testing Data..</msg>
-<status status="PASS" endtime="20170902 23:43:05.073" starttime="20170902 23:43:05.072"></status>
+<msg timestamp="20170903 00:45:11.937" level="INFO">Cleansing Testing Data..</msg>
+<status status="PASS" endtime="20170903 00:45:11.937" starttime="20170903 00:45:11.937"></status>
 </kw>
-<status status="PASS" endtime="20170902 23:43:05.073" starttime="20170902 23:43:05.072"></status>
+<status status="PASS" endtime="20170903 00:45:11.938" starttime="20170903 00:45:11.936"></status>
 </kw>
 <doc>SFF Automate Testing Framework</doc>
-<status status="PASS" endtime="20170902 23:43:05.073" starttime="20170902 23:41:33.553"></status>
+<status status="PASS" endtime="20170903 00:45:11.938" starttime="20170903 00:44:39.029"></status>
 </suite>
 <statistics>
 <total>

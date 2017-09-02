@@ -5,6 +5,7 @@ Resource  ./PO/SignIn.robot
 Resource  ./PO/TopNav.robot
 Resource  ./PO/AssetAccountPage.robot
 Resource  ./PO/OrderHistoryPage.robot
+Resource  ./PO/OrderManagementPage.robot
 
 
 *** Keywords ***
@@ -36,7 +37,10 @@ Select First Account List
 
 Select Order Type List
     [Arguments]  ${OrderType}
-    AssetAccountPage.Select Order Type List  ${OrderType}
+    OrderManagementPage.Select Order Type List  ${OrderType}
 
 Click Go Button
     AssetAccountPage.Click Go Button
+
+Cancel Order
+    
