@@ -5,7 +5,7 @@ Resource  ../../Config/Main_config.robot
 *** Keywords ***
 Go To Asset Account Page
     AssetAccountPage.Mouse Over Menu Order Management
-    AssetAccountPage.Verify Page Link
+    #AssetAccountPage.Verify Page Link
     AssetAccountPage.Click Order History Link
 
 Mouse Over Menu Order Management
@@ -28,10 +28,3 @@ Click Search Account
 
 Select First Account List
     click link  ${FIRST_ACCOUNT_LIST}
-
-Select Order Type List
-    [Arguments]  ${OrderType}
-    select from list  //*[@id="frmOrderType:idSelectOneOrderType"]  ${OrderType}
-
-Click Go Button
-    click button  ${BTN_ORDER_GO_BUTTON}

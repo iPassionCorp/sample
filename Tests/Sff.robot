@@ -41,8 +41,9 @@ Order New Registration
     sleep  3s
     Sff.Select Order Type List  New Registration
     sleep  5s
-    #Sff.Click Go Button
-    #Sff.Cancel Order
+    Sff.Click Go Button
+    Sleep  5s
+    Sff.Cancel Order  ${CANCEL_ORDER_REASON}
 
 
 

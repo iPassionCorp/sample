@@ -40,7 +40,9 @@ Select Order Type List
     OrderManagementPage.Select Order Type List  ${OrderType}
 
 Click Go Button
-    AssetAccountPage.Click Go Button
+    OrderManagementPage.Click Go Button
 
 Cancel Order
-    
+    [Arguments]  ${CancelOrderReason}
+    OrderManagementPage.Cancel Order  ${CancelOrderReason}
+    OrderManagementPage.Click Cancel Button

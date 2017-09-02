@@ -4,7 +4,7 @@ Library  Selenium2Library
 *** Keywords ***
 Go To Search Order History Page
     OrderHistoryPage.Mouse Over Menu Order Management
-    OrderHistoryPage.Verify Page Link
+    #OrderHistoryPage.Verify Page Link
     OrderHistoryPage.Click Order History Link
 
 Mouse Over Menu Order Management
