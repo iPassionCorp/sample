@@ -14,7 +14,8 @@ Click Go Button
     Click Image  ${BTN_ORDER_GO_BUTTON}
 
 Click Cancel Button
-    Click Image  ${BTN_CANCEL_BUTTON}
+    #Click Button  ${BTN_CANCEL_BUTTON}
+    Click Button  CancelOrder
     ${ORDER_NO} =  Get Text  ${INPUT_SHOW_ORDER_NO}
     Wait Until Page Contains  Cancel Order Number: ${ORDER_NO} success
 
