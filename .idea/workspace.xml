@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f152073a-ae54-46c9-ad09-bddd965d3032" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/PO/LandingSignInPage.robot" afterPath="$PROJECT_DIR$/Resources/PO/LandingSignInPage.robot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Sff.robot" afterPath="$PROJECT_DIR$/Tests/Sff.robot" />
     </list>
     <ignored path="Results/log.html" />
     <ignored path="Results/output.xml" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="LandingSignInPage.robot" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/PO/LandingSignInPage.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="135">
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -703,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/PO/LandingSignInPage.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="135">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
