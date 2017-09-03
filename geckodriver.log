@@ -2319,3 +2319,271 @@ JavaScript warning: https://sffportal.ais.co.th/SFFWeb/a4j/g/3_3_3.Finalorg/rich
 1504449973431	addons.xpi	DEBUG	Calling bootstrap method shutdown on clicktoplay-rollout@mozilla.org version 1.2
 1504449973431	addons.xpi	DEBUG	Calling bootstrap method shutdown on aushelper@mozilla.org version 2.0
 [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1504450854216	geckodriver	INFO	geckodriver 0.18.0
+1504450854226	geckodriver	INFO	Listening on 127.0.0.1:60628
+1504450855707	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args ["-marionette"]
+1504450857700	addons.manager	DEBUG	Application has been upgraded
+1504450857741	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/XPIProvider.jsm: ["XPIProvider", "XPIInternal"]
+1504450857747	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/LightweightThemeManager.jsm: ["LightweightThemeManager"]
+1504450857793	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/GMPProvider.jsm
+1504450857798	addons.manager	DEBUG	Loaded provider scope for resource://gre/modules/addons/PluginProvider.jsm
+1504450857799	addons.manager	DEBUG	Starting provider: XPIProvider
+1504450857800	addons.xpi	DEBUG	startup
+1504450857800	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1504450857800	addons.xpi	INFO	Removing all system add-on upgrades.
+1504450857802	addons.xpi	DEBUG	checkForChanges
+1504450857803	addons.xpi	DEBUG	Loaded add-on state: ${}
+1504450857805	addons.xpi	INFO	Mapping aushelper@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi
+1504450857805	addons.xpi	INFO	Mapping clicktoplay-rollout@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi
+1504450857805	addons.xpi	INFO	Mapping e10srollout@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi
+1504450857806	addons.xpi	INFO	Mapping firefox@getpocket.com to /Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi
+1504450857806	addons.xpi	INFO	Mapping followonsearch@mozilla.com to /Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi
+1504450857806	addons.xpi	INFO	Mapping screenshots@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi
+1504450857807	addons.xpi	INFO	Mapping shield-recipe-client@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi
+1504450857807	addons.xpi	INFO	Mapping webcompat@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi
+1504450857807	addons.xpi	DEBUG	New add-on aushelper@mozilla.org in app-system-defaults
+1504450857808	addons.xpi	INFO	Mapping aushelper@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi
+1504450857809	addons.xpi	DEBUG	New add-on clicktoplay-rollout@mozilla.org in app-system-defaults
+1504450857810	addons.xpi	INFO	Mapping clicktoplay-rollout@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi
+1504450857810	addons.xpi	DEBUG	New add-on e10srollout@mozilla.org in app-system-defaults
+1504450857811	addons.xpi	INFO	Mapping e10srollout@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi
+1504450857812	addons.xpi	DEBUG	New add-on firefox@getpocket.com in app-system-defaults
+1504450857812	addons.xpi	INFO	Mapping firefox@getpocket.com to /Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi
+1504450857812	addons.xpi	DEBUG	New add-on followonsearch@mozilla.com in app-system-defaults
+1504450857813	addons.xpi	INFO	Mapping followonsearch@mozilla.com to /Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi
+1504450857813	addons.xpi	DEBUG	New add-on screenshots@mozilla.org in app-system-defaults
+1504450857814	addons.xpi	INFO	Mapping screenshots@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi
+1504450857814	addons.xpi	DEBUG	New add-on shield-recipe-client@mozilla.org in app-system-defaults
+1504450857814	addons.xpi	INFO	Mapping shield-recipe-client@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi
+1504450857814	addons.xpi	DEBUG	New add-on webcompat@mozilla.org in app-system-defaults
+1504450857815	addons.xpi	INFO	Mapping webcompat@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi
+1504450857815	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to /Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1504450857816	addons.xpi	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1504450857816	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to /Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1504450857816	addons.xpi	DEBUG	getInstallState changed: true, state: {}
+1504450857817	addons.xpi	INFO	SystemAddonInstallLocation directory is missing
+1504450857827	addons.xpi-utils	DEBUG	Opening XPI database /var/folders/3w/d8_4wrp167g9thfrz12v1gp00000gn/T/rust_mozprofile.12qKXhdQQDxB/extensions.json
+1504450857829	addons.xpi-utils	DEBUG	New add-on aushelper@mozilla.org installed in app-system-defaults
+*** Blocklist::_loadBlocklistFromFile: blocklist is disabled
+1504450857869	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857871	addons.xpi-utils	DEBUG	New add-on clicktoplay-rollout@mozilla.org installed in app-system-defaults
+1504450857876	DeferredSave.extensions.json	DEBUG	Starting timer
+1504450857878	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857879	addons.xpi-utils	DEBUG	New add-on e10srollout@mozilla.org installed in app-system-defaults
+1504450857886	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857886	addons.xpi-utils	DEBUG	New add-on firefox@getpocket.com installed in app-system-defaults
+1504450857894	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857894	addons.xpi-utils	DEBUG	New add-on followonsearch@mozilla.com installed in app-system-defaults
+1504450857899	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857899	addons.xpi-utils	DEBUG	New add-on screenshots@mozilla.org installed in app-system-defaults
+1504450857934	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857934	addons.xpi-utils	DEBUG	New add-on shield-recipe-client@mozilla.org installed in app-system-defaults
+1504450857938	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857939	addons.xpi-utils	DEBUG	New add-on webcompat@mozilla.org installed in app-system-defaults
+1504450857942	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857942	addons.xpi-utils	DEBUG	New add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} installed in app-global
+1504450857946	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857947	addons.manager	DEBUG	Registering startup change 'installed' for aushelper@mozilla.org
+1504450857961	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi
+1504450857964	addons.xpi	DEBUG	Calling bootstrap method install on aushelper@mozilla.org version 2.0
+1504450857964	addons.xpi-utils	DEBUG	Make addon app-system-defaults:aushelper@mozilla.org visible
+1504450857965	addons.xpi	DEBUG	Updating XPIState for {"id":"aushelper@mozilla.org","syncGUID":"{1ebc6332-4de7-1f4c-a11e-095cf93936c4}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Application Update Service Helper","description":"Sets value(s) in the update url based on custom checks.","creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi","skinnable":false,"size":8488,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450857969	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857970	addons.manager	DEBUG	Registering startup change 'installed' for clicktoplay-rollout@mozilla.org
+1504450857971	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi
+1504450857988	addons.xpi	DEBUG	Calling bootstrap method install on clicktoplay-rollout@mozilla.org version 1.2
+1504450857988	addons.xpi-utils	DEBUG	Make addon app-system-defaults:clicktoplay-rollout@mozilla.org visible
+1504450857988	addons.xpi	DEBUG	Updating XPIState for {"id":"clicktoplay-rollout@mozilla.org","syncGUID":"{727ffc8d-972e-4a4c-a7a3-22232fc6b42d}","location":"app-system-defaults","version":"1.2","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Click-to-Play staged rollout","description":"Staged rollout for Click-to-Play Flash.","creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi","skinnable":false,"size":5621,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450857989	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857990	addons.manager	DEBUG	Registering startup change 'installed' for e10srollout@mozilla.org
+1504450857990	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi
+1504450857993	addons.xpi	DEBUG	Calling bootstrap method install on e10srollout@mozilla.org version 2.0
+1504450857995	addons.xpi-utils	DEBUG	Make addon app-system-defaults:e10srollout@mozilla.org visible
+1504450857995	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"{0999cbab-907f-8643-8cd3-a71e7e93de0c}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi","skinnable":false,"size":13287,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450857996	DeferredSave.extensions.json	DEBUG	Save changes
+1504450857996	addons.manager	DEBUG	Registering startup change 'installed' for firefox@getpocket.com
+1504450857997	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi
+1504450858004	addons.xpi	DEBUG	Calling bootstrap method install on firefox@getpocket.com version 1.0.5
+1504450858005	addons.xpi-utils	DEBUG	Make addon app-system-defaults:firefox@getpocket.com visible
+1504450858005	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"{15ee3d82-77a2-c747-99f3-ac76afc01856}","location":"app-system-defaults","version":"1.0.5","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi","skinnable":false,"size":862517,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858006	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858006	addons.manager	DEBUG	Registering startup change 'installed' for followonsearch@mozilla.com
+1504450858007	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi
+1504450858009	addons.xpi	DEBUG	Calling bootstrap method install on followonsearch@mozilla.com version 0.9.1
+1504450858009	addons.xpi-utils	DEBUG	Make addon app-system-defaults:followonsearch@mozilla.com visible
+1504450858010	addons.xpi	DEBUG	Updating XPIState for {"id":"followonsearch@mozilla.com","syncGUID":"{53b1429b-1511-2d4a-a804-73f7dd953772}","location":"app-system-defaults","version":"0.9.1","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Follow-on Search Telemetry","description":null,"creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi","skinnable":false,"size":16730,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.0","maxVersion":"59.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858011	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858011	addons.manager	DEBUG	Registering startup change 'installed' for screenshots@mozilla.org
+1504450858012	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi
+1504450858015	addons.xpi	DEBUG	Calling bootstrap method install on screenshots@mozilla.org version 10.10.0
+1504450858015	addons.xpi-utils	DEBUG	Make addon app-system-defaults:screenshots@mozilla.org visible
+1504450858015	addons.xpi	DEBUG	Updating XPIState for {"id":"screenshots@mozilla.org","syncGUID":"{2416ea30-7c4a-e348-a637-1f01d64bc4a2}","location":"app-system-defaults","version":"10.10.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Firefox Screenshots","description":null,"creator":null,"homepageURL":"https://pageshot.net/"},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi","skinnable":false,"size":651762,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"51.0a1","maxVersion":"*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858016	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858016	addons.manager	DEBUG	Registering startup change 'installed' for shield-recipe-client@mozilla.org
+1504450858017	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi
+1504450858019	addons.xpi	DEBUG	Calling bootstrap method install on shield-recipe-client@mozilla.org version 55.1
+1504450858019	addons.xpi-utils	DEBUG	Make addon app-system-defaults:shield-recipe-client@mozilla.org visible
+1504450858019	addons.xpi	DEBUG	Updating XPIState for {"id":"shield-recipe-client@mozilla.org","syncGUID":"{e7d91776-8bac-a048-ba52-aca697d26ce9}","location":"app-system-defaults","version":"55.1","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Shield Recipe Client","description":"Client to download and run recipes for SHIELD, Heartbeat, etc.","creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi","skinnable":false,"size":140305,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858020	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858020	addons.manager	DEBUG	Registering startup change 'installed' for webcompat@mozilla.org
+1504450858021	addons.xpi	DEBUG	Loading bootstrap scope from /Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi
+1504450858024	addons.xpi	DEBUG	Calling bootstrap method install on webcompat@mozilla.org version 1.1
+1504450858024	addons.xpi-utils	DEBUG	Make addon app-system-defaults:webcompat@mozilla.org visible
+1504450858024	addons.xpi	DEBUG	Updating XPIState for {"id":"webcompat@mozilla.org","syncGUID":"{02524af4-1d48-294b-849a-80ba97806502}","location":"app-system-defaults","version":"1.1","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Web Compat","description":"Urgent post-release fixes for web compatibility.","creator":null,"homepageURL":null},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi","skinnable":false,"size":8992,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858025	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858025	addons.xpi-utils	DEBUG	Make addon app-global:{972ce4c6-7e08-4474-a285-3208198ce6fd} visible
+1504450858025	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"{67c08940-e36d-4449-87cd-960e42779f28}","location":"app-global","version":"55.0.2","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"optionsBrowserStyle":null,"aboutURL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":false,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"path":"/Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","skinnable":true,"size":3588,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.0.2"}],"targetPlatforms":[],"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"userPermissions":null,"icons":{},"iconURL":"chrome://browser/content/default-theme-icon.svg","icon64URL":null}
+1504450858026	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858027	addons.xpi	DEBUG	Updating XPIState for {"id":"aushelper@mozilla.org","syncGUID":"{1ebc6332-4de7-1f4c-a11e-095cf93936c4}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Application Update Service Helper","description":"Sets value(s) in the update url based on custom checks.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi","skinnable":false,"size":8488,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858027	addons.xpi	DEBUG	Updating XPIState for {"id":"clicktoplay-rollout@mozilla.org","syncGUID":"{727ffc8d-972e-4a4c-a7a3-22232fc6b42d}","location":"app-system-defaults","version":"1.2","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Click-to-Play staged rollout","description":"Staged rollout for Click-to-Play Flash.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi","skinnable":false,"size":5621,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858028	addons.xpi	DEBUG	Updating XPIState for {"id":"e10srollout@mozilla.org","syncGUID":"{0999cbab-907f-8643-8cd3-a71e7e93de0c}","location":"app-system-defaults","version":"2.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Multi-process staged rollout","description":"Staged rollout of Firefox multi-process feature.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi","skinnable":false,"size":13287,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858028	addons.xpi	DEBUG	Updating XPIState for {"id":"firefox@getpocket.com","syncGUID":"{15ee3d82-77a2-c747-99f3-ac76afc01856}","location":"app-system-defaults","version":"1.0.5","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Pocket","description":"When you find something you want to view later, put it in Pocket.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi","skinnable":false,"size":862517,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858028	addons.xpi	DEBUG	Updating XPIState for {"id":"followonsearch@mozilla.com","syncGUID":"{53b1429b-1511-2d4a-a804-73f7dd953772}","location":"app-system-defaults","version":"0.9.1","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Follow-on Search Telemetry","description":null,"creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi","skinnable":false,"size":16730,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"52.0","maxVersion":"59.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858030	addons.xpi	DEBUG	Updating XPIState for {"id":"screenshots@mozilla.org","syncGUID":"{2416ea30-7c4a-e348-a637-1f01d64bc4a2}","location":"app-system-defaults","version":"10.10.0","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Firefox Screenshots","description":null,"creator":null,"homepageURL":"https://pageshot.net/"},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi","skinnable":false,"size":651762,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"51.0a1","maxVersion":"*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858031	addons.xpi	DEBUG	Updating XPIState for {"id":"shield-recipe-client@mozilla.org","syncGUID":"{e7d91776-8bac-a048-ba52-aca697d26ce9}","location":"app-system-defaults","version":"55.1","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Shield Recipe Client","description":"Client to download and run recipes for SHIELD, Heartbeat, etc.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi","skinnable":false,"size":140305,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858031	addons.xpi	DEBUG	Updating XPIState for {"id":"webcompat@mozilla.org","syncGUID":"{02524af4-1d48-294b-849a-80ba97806502}","location":"app-system-defaults","version":"1.1","type":"extension","internalName":null,"updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"defaultLocale":{"name":"Web Compat","description":"Urgent post-release fixes for web compatibility.","creator":null,"homepageURL":null},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"bootstrap":true,"path":"/Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi","skinnable":false,"size":8992,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.*"}],"targetPlatforms":[],"multiprocessCompatible":true,"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"mpcOptedOut":false,"userPermissions":null,"icons":{},"iconURL":null,"icon64URL":null}
+1504450858031	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"{67c08940-e36d-4449-87cd-960e42779f28}","location":"app-global","version":"55.0.2","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"optionsBrowserStyle":null,"aboutURL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"installDate":1502724278000,"updateDate":1502724278000,"applyBackgroundUpdates":1,"path":"/Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","skinnable":true,"size":3588,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"55.0.2","maxVersion":"55.0.2"}],"targetPlatforms":[],"seen":true,"dependencies":[],"hasEmbeddedWebExtension":false,"userPermissions":null,"icons":{},"iconURL":"chrome://browser/content/default-theme-icon.svg","icon64URL":null}
+1504450858032	DeferredSave.extensions.json	DEBUG	Save changes
+1504450858032	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1504450858032	addons.xpi-utils	DEBUG	Updating add-on states
+1504450858041	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi
+1504450858042	addons.xpi	DEBUG	Calling bootstrap method startup on aushelper@mozilla.org version 2.0
+1504450858043	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi
+1504450858043	addons.xpi	DEBUG	Calling bootstrap method startup on clicktoplay-rollout@mozilla.org version 1.2
+1504450858131	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi
+1504450858131	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 2.0
+1504450858132	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi
+1504450858132	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0.5
+1504450858184	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi
+1504450858184	addons.xpi	DEBUG	Calling bootstrap method startup on followonsearch@mozilla.com version 0.9.1
+1504450858185	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi
+1504450858185	addons.xpi	DEBUG	Calling bootstrap method startup on screenshots@mozilla.org version 10.10.0
+1504450858186	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi
+1504450858186	addons.xpi	DEBUG	Calling bootstrap method startup on shield-recipe-client@mozilla.org version 55.1
+1504450858198	addons.xpi	DEBUG	Registering manifest for /Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi
+1504450858198	addons.xpi	DEBUG	Calling bootstrap method startup on webcompat@mozilla.org version 1.1
+1504450858206	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1504450858207	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1504450858207	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1504450858207	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1504450858207	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1504450858208	addons.manager	DEBUG	Starting provider: GMPProvider
+1504450858214	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1504450858214	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1504450858214	addons.manager	DEBUG	Starting provider: PluginProvider
+1504450858215	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1504450858215	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1504450858216	addons.manager	DEBUG	Completed startup sequence
+1504450858285	Marionette	INFO	Enabled via --marionette
+1504450858771	addons.manager	DEBUG	Starting provider: PreviousExperimentProvider
+1504450858771	addons.manager	DEBUG	Registering shutdown blocker for PreviousExperimentProvider
+1504450858772	addons.manager	DEBUG	Provider finished startup: PreviousExperimentProvider
+1504450858775	DeferredSave.extensions.json	DEBUG	Starting write
+1504450859149	DeferredSave.extensions.json	DEBUG	Write succeeded
+1504450859149	addons.xpi-utils	DEBUG	XPI Database saved, setting schema version preference to 21
+2017-09-03 22:01:01.144 plugin-container[33795:8124065] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9a3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-09-03 22:01:01.152 plugin-container[33795:8124065] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x5207, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-09-03 22:01:01.152 plugin-container[33795:8124065] void __CFPasteboardSetup() : Failed to allocate communication port for com.apple.CFPasteboardClient; this is likely due to sandbox restrictions
+1504450861772	addons.manager	DEBUG	Starting provider: <unnamed-provider>
+1504450861772	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
+1504450861772	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
+1504450861777	addons.xpi	INFO	Mapping aushelper@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/aushelper@mozilla.org.xpi
+1504450861778	addons.xpi	INFO	Mapping clicktoplay-rollout@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/clicktoplay-rollout@mozilla.org.xpi
+1504450861778	addons.xpi	INFO	Mapping e10srollout@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/e10srollout@mozilla.org.xpi
+1504450861778	addons.xpi	INFO	Mapping firefox@getpocket.com to /Applications/Firefox.app/Contents/Resources/browser/features/firefox@getpocket.com.xpi
+1504450861778	addons.xpi	INFO	Mapping followonsearch@mozilla.com to /Applications/Firefox.app/Contents/Resources/browser/features/followonsearch@mozilla.com.xpi
+1504450861781	addons.xpi	INFO	Mapping screenshots@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/screenshots@mozilla.org.xpi
+1504450861781	addons.xpi	INFO	Mapping shield-recipe-client@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/shield-recipe-client@mozilla.org.xpi
+1504450861781	addons.xpi	INFO	Mapping webcompat@mozilla.org to /Applications/Firefox.app/Contents/Resources/browser/features/webcompat@mozilla.org.xpi
+1504450861782	addons.xpi	DEBUG	Existing add-on aushelper@mozilla.org in app-system-defaults
+1504450861784	addons.xpi	DEBUG	Existing add-on clicktoplay-rollout@mozilla.org in app-system-defaults
+1504450861787	addons.xpi	DEBUG	Existing add-on e10srollout@mozilla.org in app-system-defaults
+1504450861787	addons.xpi	DEBUG	Existing add-on firefox@getpocket.com in app-system-defaults
+1504450861788	addons.xpi	DEBUG	Existing add-on followonsearch@mozilla.com in app-system-defaults
+1504450861788	addons.xpi	DEBUG	Existing add-on screenshots@mozilla.org in app-system-defaults
+1504450861789	addons.xpi	DEBUG	Existing add-on shield-recipe-client@mozilla.org in app-system-defaults
+1504450861789	addons.xpi	DEBUG	Existing add-on webcompat@mozilla.org in app-system-defaults
+1504450861790	addons.xpi	INFO	Mapping {972ce4c6-7e08-4474-a285-3208198ce6fd} to /Applications/Firefox.app/Contents/Resources/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+1504450861790	addons.xpi	DEBUG	Existing add-on {972ce4c6-7e08-4474-a285-3208198ce6fd} in app-global
+1504450861791	addons.xpi	DEBUG	getInstallState changed: false, state: {}
+1504450861914	addons.productaddons	INFO	sending request to: https://aus5.mozilla.org/update/3/GMP/55.0.2/20170814073321/Darwin_x86_64-gcc3/en-US/release/Darwin%2015.6.0/default/default/update.xml
+1504450862126	Marionette	INFO	Listening on port 60634
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1504450862223	Marionette	WARN	TLS certificate errors will be ignored for this session
+1504450862289	Marionette	DEBUG	loaded listener.js
+1504450862376	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1504450862385	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1504450862385	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1504450862392	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:blank"
+1504450862400	Marionette	DEBUG	Received DOM event "pageshow" for "about:blank"
+1504450862477	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1504450862899	addons.productaddons	INFO	Completed downloading document
+1504450863433	addons.productaddons	INFO	downloadXHR File download. status=200
+1504450863441	addons.productaddons	INFO	Downloaded file will be saved to /var/folders/3w/d8_4wrp167g9thfrz12v1gp00000gn/T/tmpaddon-e6263b
+1504450863498	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1504450863498	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1504450863653	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf"
+1504450863887	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf"
+JavaScript error: https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf, line 1: ReferenceError: initialize is not defined
+1504450864462	Marionette	DEBUG	Received DOM event "beforeunload" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf"
+1504450864580	addons.productaddons	INFO	downloadXHR File download. status=200
+1504450864584	addons.productaddons	INFO	Downloaded file will be saved to /var/folders/3w/d8_4wrp167g9thfrz12v1gp00000gn/T/tmpaddon-5490f0
+1504450865003	Marionette	DEBUG	Received DOM event "pagehide" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf"
+1504450865003	Marionette	DEBUG	Received DOM event "unload" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf"
+1504450865822	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf;jsessionid=gBT2ZsZPLQhnhhm0j8Q1qkWrmfQL50p11l6752KHLyCnz2ZWRJwt!1573097331"
+1504450866249	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450866254	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450866281	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450866284	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450866302	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf;jsessionid=gBT2ZsZPLQhnhhm0j8Q1qkWrmfQL50p11l6752KHLyCnz2ZWRJwt!1573097331"
+1504450867130	Marionette	DEBUG	Received DOM event "beforeunload" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf;jsessionid=gBT2ZsZPLQhnhhm0j8Q1qkWrmfQL50p11l6752KHLyCnz2ZWRJwt!1573097331"
+1504450867439	Marionette	DEBUG	Received DOM event "pagehide" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf;jsessionid=gBT2ZsZPLQhnhhm0j8Q1qkWrmfQL50p11l6752KHLyCnz2ZWRJwt!1573097331"
+1504450867440	Marionette	DEBUG	Received DOM event "unload" for "https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf;jsessionid=gBT2ZsZPLQhnhhm0j8Q1qkWrmfQL50p11l6752KHLyCnz2ZWRJwt!1573097331"
+JavaScript warning: https://sffportal.ais.co.th/SFFWeb/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/jquery/jquery.js.jsf, line 246: unreachable code after return statement
+1504450868098	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483655"
+1504450868099	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483656"
+1504450868420	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf?idRefresh=0"
+1504450868459	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450868465	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450868476	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450868478	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450868486	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf?idRefresh=0"
+1504450869125	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1504450869794	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1504450872257	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1504450875479	Marionette	DEBUG	Received DOM event "beforeunload" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf?idRefresh=0"
+1504450878093	Marionette	DEBUG	Received DOM event "pagehide" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf?idRefresh=0"
+1504450878102	Marionette	DEBUG	Received DOM event "unload" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf?idRefresh=0"
+JavaScript warning: https://sffportal.ais.co.th/SFFWeb/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/jquery/jquery.js.jsf, line 246: unreachable code after return statement
+1504450878525	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483660"
+1504450878526	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483661"
+1504450878971	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf"
+1504450879030	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450879035	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450879035	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450879039	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450879051	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf"
+1504450882547	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1504450885661	Marionette	DEBUG	Received DOM event "beforeunload" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf"
+1504450886393	Marionette	DEBUG	Received DOM event "pagehide" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf"
+1504450886402	Marionette	DEBUG	Received DOM event "unload" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_account_accountInfo.jsf"
+JavaScript warning: https://sffportal.ais.co.th/SFFWeb/a4j/g/3_3_3.Finalorg/richfaces/renderkit/html/scripts/jquery/jquery.js.jsf, line 246: unreachable code after return statement
+1504450886795	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483665"
+1504450886796	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483666"
+1504450887224	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_order_orderInfo.jsf"
+1504450887284	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450887293	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450887303	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450887307	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/blank.html"
+1504450887317	Marionette	DEBUG	Received DOM event "pageshow" for "https://sffportal.ais.co.th/SFFWeb/pages/om/om_order_orderInfo.jsf"
+1504450890723	Marionette	INFO	New connections will no longer be accepted
+1504450890749	addons.xpi	DEBUG	Calling bootstrap method shutdown on webcompat@mozilla.org version 1.1
+1504450890750	addons.xpi	DEBUG	Calling bootstrap method shutdown on shield-recipe-client@mozilla.org version 55.1
+1504450890757	addons.xpi	DEBUG	Calling bootstrap method shutdown on screenshots@mozilla.org version 10.10.0
+1504450890759	addons.xpi	DEBUG	Calling bootstrap method shutdown on followonsearch@mozilla.com version 0.9.1
+1504450890760	addons.xpi	DEBUG	Calling bootstrap method shutdown on firefox@getpocket.com version 1.0.5
+1504450890760	addons.xpi	DEBUG	Calling bootstrap method shutdown on e10srollout@mozilla.org version 2.0
+1504450890761	addons.xpi	DEBUG	Calling bootstrap method shutdown on clicktoplay-rollout@mozilla.org version 1.2
+1504450890762	addons.xpi	DEBUG	Calling bootstrap method shutdown on aushelper@mozilla.org version 2.0

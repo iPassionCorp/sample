@@ -24,7 +24,7 @@ SigningOut
 Go to Asset Account Management
     TopNav.Go to Asset Account Page
 
-Specifig Account by Account No
+Specific Account by Account No
     [Arguments]  ${AccountNo}
     AssetAccountPage.Enter Account No  ${AccountNo}
 

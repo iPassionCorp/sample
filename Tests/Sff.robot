@@ -32,7 +32,7 @@ Order New Registration
     [Tags]  NewRegis
     Sff.Valid Login
     Sff.Go to Asset Account Management
-    Sff.Specifig Account by Account No  ${AccountNo}
+    Sff.Specific Account by Account No  ${AccountNo}
     Sff.Click Search Button
     Sff.Select First Account List
     Sff.Select Order Type List  New Registration
