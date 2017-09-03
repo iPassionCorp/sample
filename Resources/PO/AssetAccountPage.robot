@@ -27,4 +27,5 @@ Click Search Account
     click button  ${SEARCH_ACCOUNT_BUTTON}
 
 Select First Account List
+    Wait Until Page Contains Element  ${FIRST_ACCOUNT_LIST}
     click link  ${FIRST_ACCOUNT_LIST}

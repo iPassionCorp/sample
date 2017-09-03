@@ -44,5 +44,5 @@ Click Go Button
 
 Cancel Order
     [Arguments]  ${CancelOrderReason}
-    OrderManagementPage.Cancel Order  ${CancelOrderReason}
+    OrderManagementPage.Select Cancel Order Reason  ${CancelOrderReason}
     OrderManagementPage.Click Cancel Button
