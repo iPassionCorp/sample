@@ -1,6 +1,9 @@
 *** Variables ***
 ${BROWSER} =  chrome
-${URL} =  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
+${URL} =  ${URL_SFF_PVT}
+${URL_SFF_PVT} =  http://10.13.81.39:8103/SFFWeb/pages/home/portal.jsf
+${URL_SFF_SIT} =  https://sffsit.ais.co.th:8103/SFFWeb/pages/home/portal.jsf
+${URL_SFF_PROD} =  https://sffportal.ais.co.th/SFFWeb/pages/home/portal.jsf
 
 #Valid User&Password
 ${SFF_USER} =  porntipp

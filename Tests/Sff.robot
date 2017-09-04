@@ -14,6 +14,10 @@ Test Teardown  Common.End Web Test
 
 
 *** Test Cases ***
+Test Case1
+    [Tags]  Test
+    Sff.Valid Login
+
 Test Authenticaion
     [Documentation]  Verify Valid SignIn SFF
     [Tags]  Smoke

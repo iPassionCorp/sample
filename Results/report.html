@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 3.0.2 (Python 2.7.13 on darwin)" name="Generator">
+<meta content="Robot Framework 3.0 (Python 2.7.11 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJEBoACtnfgA5cYYAERsiAEx2lAAbKkQAcazBACZCVwAcM1cAK0ucAAMDBQAnQncASG+FABkoVQAyWmgA6f8SgvH/Ij99+GLyIinyJfn/Yi//KSLzUy9iZogpIld3/4JVVTkid7vyUjNVNVJEAGOZ6Z7pXwAABpmZkRiLAAAGiJZpmGAAAEEt3SXdxAAATC7o/u3EAAC8MRZpjasAAAY1VVVTYAAABKqqqqpAAAAADKqq4AAAAAAAv4sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMADAADgAwAA4AcAAOAHAADgBwAAwAcAAOAHAADgDwAA8A8AAPg/AAD+fwAA">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -516,7 +516,7 @@ a:link, a:visited {
 .doc pre {
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #f4f4f4;
+    background: #eee;
 }
 .doc code {
     padding: 0 0.2em;
@@ -1020,16 +1020,8 @@ window.util = function () {
         var base = window.output ? window.output.baseMillis : 0;
         return new Date(base + millis);
     }
-    function createGeneratedString(timestamp) {
-        var date = new Date(timestamp);
-        var dt = dateTimeFromDate(date).slice(0, 17);  // drop millis
-        var offset = date.getTimezoneOffset();
-        var sign = offset > 0 ? '-' : '+';
-        var hours = Math.floor(Math.abs(offset) / 60);
-        var mins = Math.abs(offset) % 60;
-        return dt + ' GMT' + sign + padTo(hours, 2) + ':' + padTo(mins, 2);
-    }
-    function createGeneratedAgoString(timestamp) {
+    function createGeneratedAgoString(generatedMillis) {
+        generatedMillis = timestamp(generatedMillis);
         function timeString(time, shortUnit) {
             var unit = {y: 'year', d: 'day', h: 'hour', m: 'minute',
                         s: 'second'}[shortUnit];
@@ -1040,7 +1032,7 @@ window.util = function () {
             // Not a perfect algorithm but ought to be enough
             return days - Math.floor(years / 4);
         }
-        var generated = Math.round(timestamp / 1000);
+        var generated = Math.round(generatedMillis / 1000);
         var current = Math.round(new Date().getTime() / 1000);
         var elapsed = current - generated;
         var prefix = '';
@@ -1099,7 +1091,6 @@ window.util = function () {
         dateTimeFromDate: dateTimeFromDate,
         formatElapsed: formatElapsed,
         timestamp: timestamp,
-        createGeneratedString: createGeneratedString,
         createGeneratedAgoString: createGeneratedAgoString,
         parseQueryString: parseQueryString
     };
@@ -1400,7 +1391,6 @@ function setTitle(suiteName, type) {
     document.title = util.unescape(title);
 }
 function addHeader() {
-    var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
@@ -1409,8 +1399,8 @@ function addHeader() {
            '<div id="top-right-header">' +
              '<div id="report-or-log-link"><a href="#"></a></div>' +
            '</div>', {
-        generated: util.createGeneratedString(generated),
-        ago: util.createGeneratedAgoString(generated),
+        generated: window.output.generatedTimestamp,
+        ago: util.createGeneratedAgoString(window.output.generatedMillis),
         title: document.title
     }).appendTo($('#header'));
 }
@@ -1567,22 +1557,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[1,0,38368],[],[[5,0,1,6,[7],[1,1223,37143],[]]],[],[1,1,1,1]];
+window.output["suite"] = [1,2,3,4,[],[0,0,63058],[],[[5,0,1,0,[6],[0,184,62872,7],[]]],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Sff","*/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/sff.robot","*../tests/sff.robot","*<p>SFF Automate Testing Framework\x3c/p>","*Order New Registration","*<p>Order New Registration\x3c/p>","*NewRegis"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Sff","*D:\\Workspace\\SFF-Automate-Testing\\tests\\sff.robot","*../tests/sff.robot","*<p>SFF Automate Testing Framework\x3c/p>","*Test Case1","*Test","*Setup failed:\nWebDriverException: Message: Can't load the profile. Profile Dir: c:\\users\\abhisak.c\\appdata\\local\\temp\\tmp38hk9i\\webdriver-py-profilecopy If you specified a log_file in the FirefoxBinary constructor, check it for details.\n"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:37","fail":0,"label":"Critical Tests","pass":1},{"elapsed":"00:00:37","fail":0,"label":"All Tests","pass":1}],[{"elapsed":"00:00:37","fail":0,"label":"NewRegis","pass":1}],[{"elapsed":"00:00:38","fail":0,"id":"s1","label":"Sff","name":"Sff","pass":1}]];
+window.output["stats"] = [[{"elapsed":"00:01:03","fail":1,"label":"Critical Tests","pass":0},{"elapsed":"00:01:03","fail":1,"label":"All Tests","pass":0}],[{"elapsed":"00:01:03","fail":1,"label":"Test","pass":0}],[{"elapsed":"00:01:03","fail":1,"id":"s1","label":"Sff","name":"Sff","pass":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1504450852805;
+window.output["baseMillis"] = 1504496692672;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 38426;
+window.output["generatedMillis"] = 62328;
+</script>
+<script type="text/javascript">
+window.output["generatedTimestamp"] = "20170904 10:45:55 GMT +08:00";
 </script>
 <script type="text/javascript">
 window.settings = {"background":{"fail":"#f66","nonCriticalFail":"#9e9","pass":"#9e9"},"logURL":"log.html","title":""};

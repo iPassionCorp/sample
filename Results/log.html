@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 3.0.2 (Python 2.7.13 on darwin)" name="Generator">
+<meta content="Robot Framework 3.0 (Python 2.7.11 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJEBoACtnfgA5cYYAERsiAEx2lAAbKkQAcazBACZCVwAcM1cAK0ucAAMDBQAnQncASG+FABkoVQAyWmgA6f8SgvH/Ij99+GLyIinyJfn/Yi//KSLzUy9iZogpIld3/4JVVTkid7vyUjNVNVJEAGOZ6Z7pXwAABpmZkRiLAAAGiJZpmGAAAEEt3SXdxAAATC7o/u3EAAC8MRZpjasAAAY1VVVTYAAABKqqqqpAAAAADKqq4AAAAAAAv4sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMADAADgAwAA4AcAAOAHAADgBwAAwAcAAOAHAADgDwAA8A8AAPg/AAD+fwAA">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -510,7 +510,7 @@ a:link, a:visited {
 .doc pre {
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #f4f4f4;
+    background: #eee;
 }
 .doc code {
     padding: 0 0.2em;
@@ -1201,16 +1201,8 @@ window.util = function () {
         var base = window.output ? window.output.baseMillis : 0;
         return new Date(base + millis);
     }
-    function createGeneratedString(timestamp) {
-        var date = new Date(timestamp);
-        var dt = dateTimeFromDate(date).slice(0, 17);  // drop millis
-        var offset = date.getTimezoneOffset();
-        var sign = offset > 0 ? '-' : '+';
-        var hours = Math.floor(Math.abs(offset) / 60);
-        var mins = Math.abs(offset) % 60;
-        return dt + ' GMT' + sign + padTo(hours, 2) + ':' + padTo(mins, 2);
-    }
-    function createGeneratedAgoString(timestamp) {
+    function createGeneratedAgoString(generatedMillis) {
+        generatedMillis = timestamp(generatedMillis);
         function timeString(time, shortUnit) {
             var unit = {y: 'year', d: 'day', h: 'hour', m: 'minute',
                         s: 'second'}[shortUnit];
@@ -1221,7 +1213,7 @@ window.util = function () {
             // Not a perfect algorithm but ought to be enough
             return days - Math.floor(years / 4);
         }
-        var generated = Math.round(timestamp / 1000);
+        var generated = Math.round(generatedMillis / 1000);
         var current = Math.round(new Date().getTime() / 1000);
         var elapsed = current - generated;
         var prefix = '';
@@ -1280,7 +1272,6 @@ window.util = function () {
         dateTimeFromDate: dateTimeFromDate,
         formatElapsed: formatElapsed,
         timestamp: timestamp,
-        createGeneratedString: createGeneratedString,
         createGeneratedAgoString: createGeneratedAgoString,
         parseQueryString: parseQueryString
     };
@@ -1581,7 +1572,6 @@ function setTitle(suiteName, type) {
     document.title = util.unescape(title);
 }
 function addHeader() {
-    var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
@@ -1590,8 +1580,8 @@ function addHeader() {
            '<div id="top-right-header">' +
              '<div id="report-or-log-link"><a href="#"></a></div>' +
            '</div>', {
-        generated: util.createGeneratedString(generated),
-        ago: util.createGeneratedAgoString(generated),
+        generated: window.output.generatedTimestamp,
+        ago: util.createGeneratedAgoString(window.output.generatedMillis),
         title: document.title
     }).appendTo($('#header'));
 }
@@ -1727,25 +1717,28 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[1,0,38368],[],[[5,0,1,6,[7],[1,1223,37143],[[1,8,9,0,0,0,0,0,[1,1225,8416],[[0,10,11,0,12,13,0,0,[1,1226,8415],[],[[1226,2,14]]]],[]],[0,15,1,0,0,0,0,0,[1,9642,3950],[[0,16,17,0,0,0,0,0,[1,9643,1485],[[0,18,11,0,19,20,0,0,[1,9644,1484],[],[[9645,2,21]]]],[]],[0,22,17,0,0,0,0,0,[1,11129,31],[[0,23,11,0,24,25,0,0,[1,11130,29],[],[]]],[]],[0,26,27,0,0,0,0,0,[1,11160,2432],[[0,28,27,0,0,0,0,0,[1,11161,167],[[0,29,11,0,30,31,0,0,[1,11162,166],[],[[11163,2,32]]]],[]],[0,33,27,0,0,0,0,0,[1,11329,150],[[0,34,11,0,35,36,0,0,[1,11330,127],[],[[11331,2,37]]]],[]],[0,38,27,0,0,0,0,0,[1,11480,2112],[[0,39,11,0,40,41,0,0,[1,11481,2110],[],[[11482,2,42]]]],[]]],[]]],[]],[0,43,1,0,0,0,0,0,[1,13593,2121],[[0,44,45,0,0,0,0,0,[1,13594,2120],[[0,46,47,0,0,0,0,0,[1,13594,2120],[[0,48,47,0,0,0,0,0,[1,13595,419],[[0,49,11,0,50,51,0,0,[1,13596,418],[],[[13597,2,52]]]],[]],[0,53,47,0,0,0,0,0,[1,14016,1698],[[0,54,11,0,55,56,0,0,[1,14016,1697],[],[[14017,2,57]]]],[]]],[]]],[]]],[]],[0,58,1,0,0,59,0,0,[1,15715,235],[[0,60,47,0,0,59,0,0,[1,15716,233],[[0,29,11,0,30,61,0,0,[1,15717,232],[],[[15718,2,62]]]],[]]],[]],[0,63,1,0,0,0,0,0,[1,15950,376],[[0,64,47,0,0,0,0,0,[1,15951,375],[[0,39,11,0,40,65,0,0,[1,15952,373],[],[[15952,2,66]]]],[]]],[]],[0,67,1,0,0,0,0,0,[1,16327,669],[[0,67,47,0,0,0,0,0,[1,16327,668],[[0,68,11,0,69,70,0,0,[1,16328,309],[],[]],[0,71,11,0,72,70,0,0,[1,16639,356],[],[[16640,2,73]]]],[]]],[]],[0,74,1,0,0,75,0,0,[1,16996,2462],[[0,74,76,0,0,77,0,0,[1,16997,2461],[[0,68,11,0,69,78,0,0,[1,16998,1796],[],[]],[0,79,11,0,80,81,0,0,[1,18795,663],[],[[18796,2,82]]]],[]]],[]],[0,83,1,0,0,0,0,0,[1,19459,6795],[[0,83,76,0,0,0,0,0,[1,19460,6794],[[0,84,85,0,86,87,0,0,[1,19461,3026],[],[[22487,2,88]]],[0,68,11,0,69,89,0,0,[1,22488,42],[],[]],[0,90,85,0,91,89,0,0,[1,22531,1],[],[[22531,2,92]]],[0,93,11,0,94,89,0,0,[1,22532,3721],[],[[22533,2,95]]]],[]]],[]],[0,96,1,0,0,97,0,0,[1,26254,11659],[[0,98,76,0,0,99,0,0,[1,26256,3492],[[0,84,85,0,86,87,0,0,[1,26256,3003],[],[[29258,2,88]]],[0,68,11,0,69,100,0,0,[1,29259,35],[],[]],[0,79,11,0,80,101,0,0,[1,29295,453],[],[[29296,2,102]]]],[]],[0,103,76,0,0,0,0,0,[1,29749,8164],[[0,84,85,0,86,87,0,0,[1,29749,3004],[],[[32752,2,88]]],[0,68,11,0,69,104,0,0,[1,32754,18],[],[]],[0,39,11,0,40,104,0,0,[1,32772,1745],[],[[32773,2,105]]],[0,106,11,0,107,108,109,0,[1,34518,219],[],[[34737,2,110]]],[0,84,85,0,86,87,0,0,[1,34737,3002],[],[[37739,2,88]]],[0,68,11,0,69,111,0,0,[1,37740,31],[],[]],[0,106,11,0,107,111,112,0,[1,37772,35],[],[[37807,2,113]]],[0,23,11,0,24,112,0,0,[1,37807,106],[],[]]],[]]],[]],[2,114,9,0,0,0,0,0,[1,37914,452],[[0,115,11,0,116,0,0,0,[1,37915,451],[],[]]],[]]]]],[],[1,1,1,1]];
+window.output["suite"] = [1,2,3,4,[],[0,0,63058],[],[[5,0,1,0,[6],[0,184,62872,7],[[1,8,9,0,0,0,0,0,[0,185,62869],[[0,10,11,0,12,13,0,0,[0,185,62869],[[0,14,11,0,15,0,0,0,[0,63045,6],[],[[63050,5,16]]]],[[185,2,17],[63051,3,19],[63054,5,20]]]],[]],[2,21,9,0,0,0,0,0,[1,63055,1],[[0,22,11,0,23,0,0,0,[1,63056,0],[],[]]],[]]]]],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Sff","*/Users/Kobdesign/Documents/Robot-Project/SFF-Automate-Testing/tests/sff.robot","*../tests/sff.robot","*<p>SFF Automate Testing Framework\x3c/p>","*Order New Registration","*<p>Order New Registration\x3c/p>","*NewRegis","*Begin Web Test","*Common","*Open Browser","*Selenium2Library","*<p>Opens a new browser instance to given URL.\x3c/p>","*about:blank, ${BROWSER}","*Opening browser 'ff' to base url 'about:blank'","*Valid Login","*Load","*LandingSignInPage","*Go To","*<p>Navigates the active browser instance to the provided URL.\x3c/p>","*${URL}","eNrzL0jNy8xLVygtylFQt0lUyChKTbNVyigpKSi20tcvTksryC8qSczRS8ws1kvO1yvJ0A92cwtPTdIvSExPLdbPyM9N1YcqySpOU7IjV6eNfqKdOgDcnTHp","*Verify Page Loaded","*Wait Until Page Contains","*<p>Waits until `text` appears on current page.\x3c/p>","*Username:","*Valid SignIn","*SignIn","*Enter Username","*Input Text","*<p>Types the given `text` into text field identified by `locator`.\x3c/p>","*xpath=//input[@id=\"frm:username\"], ${SFF_USER}","*Typing text 'porntipp' into text field 'xpath=//input[@id=\"frm:username\"]'","*Enter Password","*Input Password","*<p>Types the given password into text field identified by `locator`.\x3c/p>","*xpath=//input[@id=\"frm:password\"], ${SFF_PASSWORD}","*Typing password into text field 'xpath=//input[@id=\"frm:password\"]'","*Submit Button","*Click Button","*<p>Clicks a button identified by `locator`.\x3c/p>","*${LOGIN_SUBMIT_BUTTON}","*Clicking button 'xpath=//*[@id=\"frm\"]/div/table/tbody/tr[1]/td/table/tbody/tr[6]/td/input'.","*Go to Asset Account Management","*Go to Asset Account Page","*TopNav","*Go To Asset Account Page","*AssetAccountPage","*Mouse Over Menu Order Management","*Mouse Over","*<p>Simulates hovering mouse over the element specified by `locator`.\x3c/p>","*${ORDER_MANAGEMENT_LINK}","*Simulating Mouse Over on element 'xpath=//*[@id=\"ddtopmenubar\"]/ul/li[3]/a/div'","*Click Order History Link","*Click Element","*<p>Click element identified by `locator`.\x3c/p>","*${ASSET_ACCOUNT_LINK}","*Clicking element '//*[@id=\"ddsubmenu3\"]/li[2]/a'.","*Specifig Account by Account No","*${AccountNo}","*Enter Account NO","*${INPUT_ASSET_ACC_ACCOUNT_NO}, ${AccountNo}","*Typing text '31300004020900' into text field '//*[@id=\"frmSearch:AccountNo\"]'","*Click Search Button","*Click Search Account","*${SEARCH_ACCOUNT_BUTTON}","*Clicking button '//*[@id=\"frmSearch:j_id_id45\"]'.","*Select First Account List","*Wait Until Page Contains Element","*<p>Waits until element specified with `locator` appears on current page.\x3c/p>","*${FIRST_ACCOUNT_LIST}","*Click Link","*<p>Clicks a link identified by locator.\x3c/p>","*Clicking link '//a[@id=\"frmlist:acclist:0:j_id_id58\"]'.","*Select Order Type List","*New Registration","*OrderManagementPage","*${OrderType}","*${LIST_ORDER_TYPE}","*Select From List","*<p>Selects `*items` from list identified by `locator`\x3c/p>","*${LIST_ORDER_TYPE}, ${OrderType}","*Selecting option(s) 'New Registration' from list '//*[@id=\"frmOrderType:idSelectOneOrderType\"]'.","*Click Go Button","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*3s","*Slept 3 seconds","*${BTN_ORDER_GO_BUTTON}","*Log","*<p>Logs the given message with the given level.\x3c/p>","*//*[contains(@id,\"frmOrderType\")]/img","*Click Image","*<p>Clicks an image found by `locator`.\x3c/p>","*Clicking image '//*[contains(@id,\"frmOrderType\")]/img'.","*Cancel Order","*${CANCEL_ORDER_REASON}","*Select Cancel Order Reason","*${CancelOrderReason}","*${LIST_CANCEL_ORDER_REASON}","*${LIST_CANCEL_ORDER_REASON}, ${Cancel_Reason}","*Selecting option(s) 'Pending Over Due Date' from list '//*[@id=\"formHeaderOrder:hoCancelledReason\"]'.","*Click Cancel Button","*${BTN_CANCEL_BUTTON}","*Clicking button '//*[@id=\"frmButtonUpper:CancelOrderButton\"]'.","*Get Text","*<p>Returns the text value of element identified by `locator`.\x3c/p>","*${INPUT_SHOW_ORDER_NO}","*${ORDER_NO}","*${ORDER_NO} = ","*//*[@id=\"formHeaderOrder\"]/ul/li","*${MessageReturn}","*${MessageReturn} = Cancel Order Number: R1709001280607 success","*End Web Test","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Sff","*D:\\Workspace\\SFF-Automate-Testing\\tests\\sff.robot","*../tests/sff.robot","*<p>SFF Automate Testing Framework\x3c/p>","*Test Case1","*Test","*Setup failed:\nWebDriverException: Message: Can't load the profile. Profile Dir: c:\\users\\abhisak.c\\appdata\\local\\temp\\tmp38hk9i\\webdriver-py-profilecopy If you specified a log_file in the FirefoxBinary constructor, check it for details.\n","*Begin Web Test","*Common","*Open Browser","*Selenium2Library","*<p>Opens a new browser instance to given URL.\x3c/p>","*about:blank, ${BROWSER}","*Capture Page Screenshot","*<p>Takes a screenshot of the current page and embeds it into the log.\x3c/p>","*No browser is open","*Opening browser 'ff' to base url 'about:blank'","*s1-t1-k1-k1","*Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open","*WebDriverException: Message: Can't load the profile. Profile Dir: c:\\users\\abhisak.c\\appdata\\local\\temp\\tmp38hk9i\\webdriver-py-profilecopy If you specified a log_file in the FirefoxBinary constructor, check it for details.\n","*End Web Test","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:37","fail":0,"label":"Critical Tests","pass":1},{"elapsed":"00:00:37","fail":0,"label":"All Tests","pass":1}],[{"elapsed":"00:00:37","fail":0,"label":"NewRegis","pass":1}],[{"elapsed":"00:00:38","fail":0,"id":"s1","label":"Sff","name":"Sff","pass":1}]];
+window.output["stats"] = [[{"elapsed":"00:01:03","fail":1,"label":"Critical Tests","pass":0},{"elapsed":"00:01:03","fail":1,"label":"All Tests","pass":0}],[{"elapsed":"00:01:03","fail":1,"label":"Test","pass":0}],[{"elapsed":"00:01:03","fail":1,"id":"s1","label":"Sff","name":"Sff","pass":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [];
+window.output["errors"] = [[63051,3,19,18]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1504450852805;
+window.output["baseMillis"] = 1504496692672;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 38426;
+window.output["generatedMillis"] = 62328;
+</script>
+<script type="text/javascript">
+window.output["generatedTimestamp"] = "20170904 10:45:55 GMT +08:00";
 </script>
 <script type="text/javascript">
 window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","splitLogBase":"log","title":""};
